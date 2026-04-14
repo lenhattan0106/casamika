@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="CASA MIKA - Đối tác chiến lược. Tổ hợp Cafe - Working Space - Dining & Bar tại Phố Tây An Thượng, Đà Nẵng">
+    <title>Casa Mika - Đối Tác Chiến Lược</title>
+
+    <!-- Google Fonts: Inter cho Text, Playfair Display cho Tiêu đề sang trọng -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS Tùy Chỉnh -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <img src="logo.png" alt="Mika Casa Logo"
+                    onerror="this.src='https://via.placeholder.com/150x50?text=MIKA+CASA'">
+            </a>
+            <div class="nav-links">
+                <a href="#usp" class="nav-link">Giá Trị</a>
+                <a href="#policy" class="nav-link">Chính Sách</a>
+                <a href="#menu" class="nav-link">Ẩm Thực</a>
+                <a href="#pricing" class="nav-link">Bảng Giá</a>
+                <a href="#contact" class="btn btn-outline btn-sm">Trở Thành Đối Tác</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="hero">
+        <div class="hero-bg">
+            <!-- Dùng image3d.jpg làm background, hoặc fallback -->
+            <img src="image3d.jpg" alt="Mika Casa 3D View" onerror="this.style.display='none'">
+            <div class="overlay"></div>
+        </div>
+        <div class="container hero-content">
+            <span class="badge fade-up">Cơ Hội Vàng 2026</span>
+            <h1 class="hero-title fade-up delay-1">CASA MIKA<br><span>ĐỐI TÁC CHIẾN LƯỢC</span></h1>
+            <p class="hero-subtitle fade-up delay-2">
+                Tọa lạc tại "trái tim" Phố Tây An Thượng, Đà Nẵng – Mở ra cơ hội sinh lời bền vững cùng tổ hợp ẩm thực
+                và giải trí đẳng cấp hàng đầu với dòng khách đa dạng từ Á sang Âu.
+            </p>
+            <div class="hero-actions fade-up delay-3">
+                <a href="Casa Mika Portfolio tiếng việt.pdf" target="_blank" class="btn btn-primary">Tải Hồ Sơ & Hợp
+                    Đồng</a>
+                <a href="#contact" class="btn btn-outline">Nhận Cơ Chế VIP</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Khám phá</span>
+            <div class="mouse"></div>
+        </div>
+    </header>
+
+    <!-- USPs Section — Luxury B2B Redesign -->
+    <section class="usp-luxury-section" id="usp">
+        <div class="container">
+
+            <!-- Header -->
+            <div class="usp-lux-header fade-up">
+                <span class="usp-lux-eyebrow">TẠI SAO MIKA CASA?</span>
+                <h2 class="usp-lux-title">Sáu lý do một Manager<br><em>không cần thuyết phục lần hai</em></h2>
+            </div>
+
+            <!-- 6-card grid (2 rows × 3 cols) -->
+            <div class="usp-lux-grid">
+
+                <!-- Card I -->
+                <div class="usp-lux-card fade-up">
+                    <span class="usp-lux-roman">I</span>
+                    <h3 class="usp-lux-card-title">Vị Trí Không Thể Tranh Luận</h3>
+                    <p class="usp-lux-body">37 Trần Bạch Đằng nằm tại trục trung tâm Phố Tây An Thượng — nơi mật độ
+                        khách quốc tế cao nhất Đà Nẵng. Không cần giải thích với khách. Địa chỉ tự nói thay.</p>
+                </div>
+
+                <!-- Card II -->
+                <div class="usp-lux-card fade-up delay-1">
+                    <span class="usp-lux-roman">II</span>
+                    <h3 class="usp-lux-card-title">Sân Vườn 1.400m² — Không Gian Thật Sự Rộng</h3>
+                    <p class="usp-lux-body">Sức chứa 80–120 khách đồng thời trong không gian sân vườn thoáng đãng.
+                        Drop-off ngay trước cửa, xe tiếp tục di chuyển — đúng quy trình vận hành chuẩn của đoàn tour,
+                        không phát sinh thêm bất kỳ thủ tục nào.</p>
+                </div>
+
+                <!-- Card III -->
+                <div class="usp-lux-card fade-up delay-2">
+                    <span class="usp-lux-roman">III</span>
+                    <h3 class="usp-lux-card-title">Phủ Toàn Bộ Lịch Trình Tour</h3>
+                    <p class="usp-lux-body">Mở cửa 06:00, phục vụ đến 23:30. Một điểm dừng duy nhất đáp ứng Breakfast
+                        Tour, Coffee Break, Business Lunch và Dinner &amp; Bar — giảm số điểm phối hợp, tăng hiệu quả
+                        vận hành.</p>
+                </div>
+
+                <!-- Card IV -->
+                <div class="usp-lux-card fade-up">
+                    <span class="usp-lux-roman">IV</span>
+                    <h3 class="usp-lux-card-title">Khách Quốc Tế Cảm Thấy Như Ở Nhà</h3>
+                    <p class="usp-lux-body">Phố Tây là môi trường quen thuộc với khách Hàn, Nhật, Tây Âu, Úc. Không cần
+                        thích nghi văn hoá, không rào cản ngôn ngữ — nhân viên giao tiếp Anh–Hàn cơ bản.</p>
+                </div>
+
+                <!-- Card V -->
+                <div class="usp-lux-card fade-up delay-1">
+                    <span class="usp-lux-roman">V</span>
+                    <h3 class="usp-lux-card-title">Commission Rõ Ràng, Không Mặc Cả</h3>
+                    <p class="usp-lux-body">10% trên tổng hoá đơn thực tế, được ghi trong hợp đồng nguyên tắc. Chuyển
+                        khoản trong 1 ngày làm việc sau khi đoàn check-out. Không chờ đối soát cuối tháng.</p>
+                </div>
+
+                <!-- Card VI -->
+                <div class="usp-lux-card fade-up delay-2">
+                    <span class="usp-lux-roman">VI</span>
+                    <h3 class="usp-lux-card-title">FOC Đẳng Cấp Cho Người Đi Cùng Đoàn</h3>
+                    <p class="usp-lux-body">Tài xế và HDV có khu vực riêng, menu riêng, WiFi tốc độ cao. Không phải suất
+                        ăn góc bếp. Đây là sự tôn trọng với người giữ uy tín cho cả đoàn — và lý do họ chủ động đề xuất
+                        quay lại.</p>
+                </div>
+
+            </div><!-- /.usp-lux-grid -->
+        </div>
+
+        <!-- Stats Bar -->
+        <div class="usp-stats-bar">
+            <div class="container usp-stats-inner">
+                <div class="usp-stat">
+                    <span class="usp-stat-num">1.400m²</span>
+                    <span class="usp-stat-label">Không gian sân vườn</span>
+                </div>
+                <div class="usp-stat-divider"></div>
+                <div class="usp-stat">
+                    <span class="usp-stat-num">06:00–23:30</span>
+                    <span class="usp-stat-label">Hoạt động mỗi ngày</span>
+                </div>
+                <div class="usp-stat-divider"></div>
+                <div class="usp-stat">
+                    <span class="usp-stat-num">48 giờ</span>
+                    <span class="usp-stat-label">Thời gian đặt chỗ tối thiểu</span>
+                </div>
+                <div class="usp-stat-divider"></div>
+                <div class="usp-stat">
+                    <span class="usp-stat-num">1 ngày</span>
+                    <span class="usp-stat-label">Thời gian nhận commission</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Policy Section (Bán giấc mơ) -->
+    <section class="section policy-section" id="policy">
+        <div class="container grid policy-grid">
+            <div class="policy-image fade-in">
+                <div class="image-wrapper">
+                    <img src="Màu be và Nâu Sẫm Tinh tế Hệ thực vật Đồ ăn và Nhà hàng Chuyên nghiệp Chữ ký Email.jpg"
+                        alt="Dining Experience"
+                        onerror="this.src='https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?q=80&w=2070&auto=format&fit=crop'">
+                </div>
+                <div class="floating-box">
+                    <h4>Doanh thu x2</h4>
+                    <p>Cơ hội tối ưu hóa thu nhập.</p>
+                </div>
+            </div>
+            <div class="policy-content">
+                <span class="badge fade-up">Quyền Lợi Đối Tác</span>
+                <h2 class="section-title fade-up delay-1">Chính Sách Bền Vững - <br>Hợp Tác Sinh Lời</h2>
+                <p class="fade-up delay-2">Với vị thế của những người làm kinh doanh "lão làng", bạn hiểu rằng một mức
+                    hoa hồng cao thôi là chưa đủ. Tại Mika Casa, chúng tôi mang tới một hệ sinh thái quyền lợi vững
+                    chắc.</p>
+
+                <ul class="benefit-list fade-up delay-3">
+                    <li>
+                        <div class="benefit-icon">💲</div>
+                        <div class="benefit-text">
+                            <strong>Chiết Khấu Hấp Dẫn (Commission)</strong>
+                            <p>Tỷ lệ F&B cao bậc nhất khu vực, chính sách chiết khấu lũy tiến theo số lượng khách, giúp
+                                tối đa hóa biên lợi nhuận cho từng đoàn.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="benefit-icon">⚡</div>
+                        <div class="benefit-text">
+                            <strong>Cơ Chế Thanh Toán Nhanh</strong>
+                            <p>Quy trình minh bạch, đối soát tốc độ. Cắt giảm tối đa thủ tục rườm rà, dòng tiền xoay
+                                vòng nhanh chóng, không giam vốn.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="benefit-icon">👑</div>
+                        <div class="benefit-text">
+                            <strong>Chính Sách FOC Tiêu Chuẩn VIP</strong>
+                            <p>Khu vực nghỉ ngơi, dùng bữa miễn phí (Free of Charge) với menu chọn lọc dành riêng cho
+                                Tài xế & HDV. Sự tưởng thưởng xứng đáng cho người dẫn đường.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="section menu-section" id="menu">
+        <div class="container center-text">
+            <span class="badge fade-up">Trải Nghiệm Khách Hàng</span>
+            <h2 class="section-title fade-up delay-1">Bản Giao Hưởng Á - Âu</h2>
+            <p class="section-desc fade-up delay-2" style="max-width: 700px; margin: 0 auto 3rem auto;">
+                Sự tự tin của chúng tôi là bảo chứng cho uy tín của bạn với khách hàng. Mika Casa tự hào với Menu Fusion
+                Á-Âu được tinh tuyển.
+            </p>
+
+            <div class="grid signature-grid fade-up delay-3">
+                <!-- Signature 1 -->
+                <div class="signature-card card">
+                    <div class="signature-img-placeholder">
+                        <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="1"
+                            fill="none">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                            <polyline points="21 15 16 10 5 21"></polyline>
+                        </svg>
+                        <span>[Hình Ảnh Set Hải Sản]</span>
+                    </div>
+                    <div class="signature-info">
+                        <h3>Set Hải Sản Nhâm Nhi</h3>
+                        <p>Đại diện hoàn hảo cho ẩm thực phương Đông, chế biến tinh xảo vừa miệng những vị khách khắt
+                            khe nhất.</p>
+                    </div>
+                </div>
+                <!-- Signature 2 -->
+                <div class="signature-card card delay-1">
+                    <div class="signature-img-placeholder">
+                        <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="1"
+                            fill="none">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                            <polyline points="21 15 16 10 5 21"></polyline>
+                        </svg>
+                        <span>[Hình Ảnh Bò Fuji]</span>
+                    </div>
+                    <div class="signature-info">
+                        <h3>Bò Fuji Nướng Đá Thượng Hạng</h3>
+                        <p>Tuyệt tác ẩm thực Âu với chất thịt vân cẩm thạch mềm tan, điểm nhấn đẳng cấp cho bàn tiệc.
+                        </p>
+                    </div>
+                </div>
+                <!-- Signature 3 -->
+                <div class="signature-card card delay-2">
+                    <div class="signature-img-placeholder">
+                        <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="1"
+                            fill="none">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                            <polyline points="21 15 16 10 5 21"></polyline>
+                        </svg>
+                        <span>[Hình Ảnh Cocktail]</span>
+                    </div>
+                    <div class="signature-info">
+                        <h3>An Thượng Night Cocktail</h3>
+                        <p>Thức uống độc quyền mang hơi thở nhịp sống về đêm của Đà Nẵng, khép lại trọn vẹn lịch trình
+                            tour.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-action fade-up delay-3" style="margin-top: 3.5rem;">
+                <button class="btn btn-glowing btn-huge" id="openMenuBtn">KHÁM PHÁ THỰC ĐƠN TINH HOA 🌟</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section pricing-section" id="pricing">
+        <div class="container">
+            <div class="pricing-header fade-up">
+                <span class="pricing-eyebrow">CHÍNH SÁCH GIÁ</span>
+                <h2 class="pricing-title">Minh bạch từ con số<br><em>đầu tiên</em></h2>
+                <p class="pricing-subtitle">Commission rõ ràng. Thanh toán nhanh. Không tồn đọng vốn.<br>
+                    Đây là cách chúng tôi xây dựng quan hệ đối tác bền vững.</p>
+            </div>
+
+            <div class="pricing-grid fade-up delay-1">
+
+                <!-- GOI STANDARD -->
+                <div class="pricing-card">
+                    <div class="pt-tag pt-tag--highlight">PHỔ BIẾN NHẤT</div>
+                    <h3 class="pt-name">Standard Experience</h3>
+
+                    <div class="pt-price-block">
+                        <div class="pt-retail">
+                            <span class="pt-retail-label">Giá bán lẻ</span>
+                            <span class="pt-retail-amount">520.000đ<span class="pt-retail-unit"> / khách</span></span>
+                        </div>
+                        <div class="pt-commission">
+                            <span class="pt-commission-label">Commission 10%</span>
+                            <span class="pt-commission-amount">52.000đ / khách</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-example">
+                        <div class="pt-example-inner">
+                            <span class="pt-example-label">VÍ DỤ MINH HOẠ</span>
+                            <p class="pt-example-text">Đoàn 30 khách<br>Bạn nhận: <strong>1.560.000đ</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="pt-divider"></div>
+
+                    <ul class="pt-includes">
+                        <li><span class="pt-check">&#10003;</span> Buffet 12 món Á–Âu fusion</li>
+                        <li><span class="pt-check">&#10003;</span> Nước uống không giới hạn</li>
+                        <li><span class="pt-check">&#10003;</span> Thời gian sử dụng: 90 phút</li>
+                        <li><span class="pt-check">&#10003;</span> Tối thiểu 20 khách / lượt</li>
+                        <li><span class="pt-check">&#10003;</span> FOC: 1 suất ăn cho tài xế + HDV</li>
+                    </ul>
+
+                    <a href="#contact" class="btn pt-btn">Liên Hệ Ngay</a>
+                </div>
+
+                <!-- GOI PREMIUM (HIGHLIGHTED) -->
+                <div class="pricing-card pricing-card--featured">
+                    <div class="pt-popular">ĐƯỢC CHỌN NHIỀU NHẤT</div>
+                    <div class="pt-tag">PREMIUM</div>
+                    <h3 class="pt-name">Premium Selection</h3>
+
+                    <div class="pt-price-block">
+                        <div class="pt-retail">
+                            <span class="pt-retail-label">Giá bán lẻ</span>
+                            <span class="pt-retail-amount">1.080.000đ<span class="pt-retail-unit"> / khách</span></span>
+                        </div>
+                        <div class="pt-commission">
+                            <span class="pt-commission-label">Commission 10%</span>
+                            <span class="pt-commission-amount">108.000đ / khách</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-example pt-example--featured">
+                        <div class="pt-example-inner">
+                            <span class="pt-example-label">VÍ DỤ MINH HOẠ</span>
+                            <p class="pt-example-text">Đoàn 20 khách<br>Bạn nhận: <strong>2.160.000đ</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="pt-divider"></div>
+
+                    <ul class="pt-includes">
+                        <li><span class="pt-check">&#10003;</span> À la carte 5 món chọn sẵn theo đoàn</li>
+                        <li><span class="pt-check">&#10003;</span> 1 ly welcome drink / khách</li>
+                        <li><span class="pt-check">&#10003;</span> Bánh tráng miệng đặc trưng Mika Casa</li>
+                        <li><span class="pt-check">&#10003;</span> Thời gian sử dụng: 120 phút</li>
+                        <li><span class="pt-check">&#10003;</span> Tối thiểu 15 khách / lượt</li>
+                        <li><span class="pt-check">&#10003;</span> FOC: suất ăn riêng + khu nghỉ VIP cho tài xế &amp;
+                            HDV</li>
+                    </ul>
+
+                    <a href="#contact" class="btn pt-btn pt-btn--featured">CHỌN GÓI NÀY</a>
+                </div>
+
+                <!-- GOI VIP -->
+                <div class="pricing-card">
+                    <div class="pt-tag">ĐOÀN HẠNG SANG</div>
+                    <h3 class="pt-name">VIP Exclusive</h3>
+
+                    <div class="pt-price-block">
+                        <div class="pt-retail">
+                            <span class="pt-retail-label">Mức giá</span>
+                            <span class="pt-retail-amount pt-retail-amount--contact">Báo giá riêng theo đoàn</span>
+                        </div>
+                        <div class="pt-commission">
+                            <span class="pt-commission-label">Commission</span>
+                            <span class="pt-commission-amount">Thương lượng trực tiếp — ưu tiên đối tác lâu dài</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-example pt-example--vip">
+                        <div class="pt-example-inner">
+                            <p class="pt-example-quote">&#8220;Mỗi đoàn VIP là một<br>trải nghiệm được thiết kế
+                                riêng.&#8221;</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-divider"></div>
+
+                    <ul class="pt-includes">
+                        <li><span class="pt-check">&#10003;</span> Thực đơn thiết kế riêng theo quốc tịch đoàn</li>
+                        <li><span class="pt-check">&#10003;</span> Không gian riêng biệt, bài trí theo yêu cầu</li>
+                        <li><span class="pt-check">&#10003;</span> Butler service xuyên suốt bữa ăn</li>
+                        <li><span class="pt-check">&#10003;</span> Rượu vang / sake / cocktail signature</li>
+                        <li><span class="pt-check">&#10003;</span> FOC cao cấp: toàn bộ đội ngũ tài xế &amp; HDV</li>
+                    </ul>
+
+                    <a href="https://zalo.me/" target="_blank" class="btn pt-btn">NHẬN BÁO GIÁ VIP</a>
+                </div>
+
+            </div><!-- /.pricing-grid -->
+
+            <div class="pricing-footnotes fade-up delay-2">
+                <p>* Commission 10% áp dụng mặc định &nbsp;·&nbsp; Chính sách ưu đãi riêng cho đối tác đạt volume từ 10
+                    đoàn / tháng</p>
+                <p>* Giá chưa bao gồm VAT &nbsp;·&nbsp; Áp dụng cho đoàn đặt trước tối thiểu 48 giờ &nbsp;·&nbsp;
+                    Commission tính trên tổng hoá đơn thực tế trước VAT</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section" id="contact">
+        <div class="container center-text fade-up">
+            <h2 class="section-title">Bắt Tay Cùng Kiến Tạo Lợi Nhuận</h2>
+            <p class="section-desc" style="max-width: 600px; margin: 0 auto 2.5rem auto;">
+                Hãy để lại dấu ấn của một nhà quản lý tài ba. Bắt đầu mối quan hệ hợp tác nghiêm túc, minh bạch và đầy
+                triển vọng với Casa Mika ngay hôm nay.
+            </p>
+            <div class="cta-actions">
+                <a href="Casa Mika Portfolio tiếng việt.pdf" target="_blank" class="btn btn-primary btn-large">📥 Tải Hồ
+                    Sơ Năng Lực</a>
+                <a href="https://zalo.me/" target="_blank" class="btn btn-zalo btn-large">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                        <path
+                            d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                        </path>
+                    </svg>
+                    Kết Nối Zalo VIP
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-info">
+                <h3>MIKA CASA</h3>
+                <p>Khẳng định vị thế, kết nối thành công.</p>
+            </div>
+            <div class="footer-certs">
+                <div class="footer-cert-item">
+                    <span class="cert-icon">🛡️</span><span>ATVSTP</span>
+                </div>
+                <div class="footer-cert-item">
+                    <span class="cert-icon">📜</span><span>Pháp Lý Chuẩn</span>
+                </div>
+                <div class="footer-cert-item">
+                    <span class="cert-icon">⭐</span><span>Dịch Vụ 5 Sao</span>
+                </div>
+            </div>
+            <div class="footer-contact">
+                <p>📍 37 Trần Bạch Đằng, Phố Tây An Thượng, Ngũ Hành Sơn, Đà Nẵng</p>
+                <p>🕒 06:00 - 23:30 (Hàng ngày)</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Mika Casa. All rights reserved. Designed for Strategic Partners.</p>
+        </div>
+    </footer>
+
+    <!-- Expanded Menu Modal -->
+    <div class="modal overlay-menu" id="menuModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeMenuBtn">&times;</button>
+            <h2 class="modal-title">THẾ GIỚI ẨM THỰC MIKA CASA</h2>
+            <p class="modal-subtitle">Trải nghiệm thị giác và vị giác không thể chối từ.</p>
+
+            <div class="modal-gallery">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1544025162-8311abc3e5b6?q=80&w=600&auto=format&fit=crop"
+                        alt="Premium Seafood">
+                    <div class="gallery-overlay">
+                        <h3>Hải Sản Thượng Hạng</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1544026217-1011d4da7000?q=80&w=600&auto=format&fit=crop"
+                        alt="Steak">
+                    <div class="gallery-overlay">
+                        <h3>Thịt Bò Nhập Khẩu</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=600&auto=format&fit=crop"
+                        alt="Cocktails">
+                    <div class="gallery-overlay">
+                        <h3>Signature Cocktails</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=600&auto=format&fit=crop"
+                        alt="Wine Collection">
+                    <div class="gallery-overlay">
+                        <h3>Bộ Sưu Tập Vang</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-cta">
+                <p>Từng chi tiết được thiết kế để giữ chân thực khách ở lại lâu hơn và chi tiêu cao hơn.</p>
+                <a href="#contact" class="btn btn-primary"
+                    onclick="document.getElementById('closeMenuBtn').click();">Trở Thành Đối Tác Ngay</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
