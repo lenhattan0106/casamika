@@ -8,11 +8,11 @@
         content="CASA MIKA - Đối tác chiến lược. Tổ hợp Cafe - Working Space - Dining & Bar tại Phố Tây An Thượng, Đà Nẵng">
     <title>Casa Mika - Đối Tác Chiến Lược</title>
 
-    <!-- Google Fonts: Inter cho Text, Playfair Display cho Tiêu đề sang trọng -->
+    <!-- Google Fonts: Inter (text) + Playfair Display (headings) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap"
         rel="stylesheet">
 
     <!-- CSS Tùy Chỉnh -->
@@ -20,12 +20,19 @@
 </head>
 
 <body>
+    <!-- Back-to-main bar -->
+    <div class="back-to-main">
+        <div class="container">
+            <a href="index.html">← Trở về trang chính Casa Mika</a>
+        </div>
+    </div>
+
     <!-- Navbar -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
-            <a href="#" class="logo">
-                <img src="logo.png" alt="Mika Casa Logo"
-                    onerror="this.src='https://via.placeholder.com/150x50?text=MIKA+CASA'">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Casa Mika Logo"
+                    onerror="this.src='https://via.placeholder.com/150x50?text=CASA+MIKA'">
             </a>
             <div class="nav-links">
                 <a href="#usp" class="nav-link">Giá Trị</a>
@@ -45,7 +52,7 @@
             <div class="overlay"></div>
         </div>
         <div class="container hero-content">
-            <span class="badge fade-up">Cơ Hội Vàng 2026</span>
+            <span class="badge fade-up">Opening at 20/5</span>
             <h1 class="hero-title fade-up delay-1">CASA MIKA<br><span>ĐỐI TÁC CHIẾN LƯỢC</span></h1>
             <p class="hero-subtitle fade-up delay-2">
                 Tọa lạc tại "trái tim" Phố Tây An Thượng, Đà Nẵng – Mở ra cơ hội sinh lời bền vững cùng tổ hợp ẩm thực
@@ -134,7 +141,7 @@
     <section class="section policy-section" id="policy">
         <div class="container grid policy-grid">
             <div class="policy-image fade-in">
-                <div class="image-wrapper image-wrapper--tall">
+                <div class="image-wrapper">
                     <img src="image/hinh1.jpg" alt="Dining Experience"
                         onerror="this.src='https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?q=80&w=2070&auto=format&fit=crop'">
                 </div>
@@ -152,7 +159,7 @@
 
                 <ul class="benefit-list fade-up delay-3">
                     <li>
-                        <div class="benefit-icon">💲</div>
+                        <div class="benefit-icon" aria-hidden="true">01</div>
                         <div class="benefit-text">
                             <strong>Chiết Khấu Hấp Dẫn (Commission)</strong>
                             <p>Tỷ lệ F&B cao bậc nhất khu vực, chính sách chiết khấu lũy tiến theo số lượng khách, giúp
@@ -160,7 +167,7 @@
                         </div>
                     </li>
                     <li>
-                        <div class="benefit-icon">⚡</div>
+                        <div class="benefit-icon" aria-hidden="true">02</div>
                         <div class="benefit-text">
                             <strong>Cơ Chế Thanh Toán Nhanh</strong>
                             <p>Quy trình minh bạch, đối soát tốc độ. Cắt giảm tối đa thủ tục rườm rà, dòng tiền xoay
@@ -168,7 +175,7 @@
                         </div>
                     </li>
                     <li>
-                        <div class="benefit-icon">👑</div>
+                        <div class="benefit-icon" aria-hidden="true">03</div>
                         <div class="benefit-text">
                             <strong>Chính Sách FOC Tiêu Chuẩn VIP</strong>
                             <p>Khu vực nghỉ ngơi, dùng bữa miễn phí (Free of Charge) với menu chọn lọc dành riêng cho
@@ -193,41 +200,47 @@
             <div class="grid signature-grid fade-up delay-3">
                 <!-- Signature 1 -->
                 <div class="signature-card card">
-                    <div class="signature-img">
-                        <img src="image/haisan.jpg" alt="Set Hải Sản"
-                            onerror="this.src='https://images.unsplash.com/photo-1544025162-8311abc3e5b6?q=80&w=600&auto=format&fit=crop'">
+                    <div class="signature-img-placeholder">
+                        <img src="image/haisan.jpg" alt="Set Hải Sản Nhâm Nhi" loading="lazy"
+                            onerror="this.src='https://images.unsplash.com/photo-1559737558-2f5a35f4523b?q=80&w=1400&auto=format&fit=crop'">
+                        <div class="signature-img-overlay"></div>
                     </div>
                     <div class="signature-info">
                         <h3>Set Hải Sản Nhâm Nhi</h3>
-                        <p>Đại diện hoàn hảo cho ẩm thực phương Đông, chế biến tinh xảo vừa miệng những vị khách khắt khe nhất.</p>
+                        <p>Đại diện hoàn hảo cho ẩm thực phương Đông, chế biến tinh xảo vừa miệng những vị khách khắt
+                            khe nhất.</p>
                     </div>
                 </div>
                 <!-- Signature 2 -->
                 <div class="signature-card card delay-1">
-                    <div class="signature-img">
-                        <img src="image/beeffuji.jpg" alt="Bò Fuji"
-                            onerror="this.src='https://images.unsplash.com/photo-1544026217-1011d4da7000?q=80&w=600&auto=format&fit=crop'">
+                    <div class="signature-img-placeholder">
+                        <img src="image/beeffuji.jpg" alt="Bò Fuji Nướng Đá Thượng Hạng" loading="lazy"
+                            onerror="this.src='https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1400&auto=format&fit=crop'">
+                        <div class="signature-img-overlay"></div>
                     </div>
                     <div class="signature-info">
                         <h3>Bò Fuji Nướng Đá Thượng Hạng</h3>
-                        <p>Tuyệt tác ẩm thực Âu với chất thịt vân cẩm thạch mềm tan, điểm nhấn đẳng cấp cho bàn tiệc.</p>
+                        <p>Tuyệt tác ẩm thực Âu với chất thịt vân cẩm thạch mềm tan, điểm nhấn đẳng cấp cho bàn tiệc.
+                        </p>
                     </div>
                 </div>
                 <!-- Signature 3 -->
                 <div class="signature-card card delay-2">
-                    <div class="signature-img">
-                        <img src="image/NightCocktail.jpg" alt="An Thượng Night Cocktail"
-                            onerror="this.src='https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=600&auto=format&fit=crop'">
+                    <div class="signature-img-placeholder">
+                        <img src="image/NightCocktail.jpg" alt="An Thượng Night Cocktail" loading="lazy"
+                            onerror="this.src='https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=1400&auto=format&fit=crop'">
+                        <div class="signature-img-overlay"></div>
                     </div>
                     <div class="signature-info">
                         <h3>An Thượng Night Cocktail</h3>
-                        <p>Thức uống độc quyền mang hơi thở nhịp sống về đêm của Đà Nẵng, khép lại trọn vẹn lịch trình tour.</p>
+                        <p>Thức uống độc quyền mang hơi thở nhịp sống về đêm của Đà Nẵng, khép lại trọn vẹn lịch trình
+                            tour.</p>
                     </div>
                 </div>
             </div>
 
             <div class="menu-action fade-up delay-3" style="margin-top: 3.5rem;">
-                <button class="btn btn-glowing btn-huge" id="openMenuBtn">KHÁM PHÁ THỰC ĐƠN TINH HOA 🌟</button>
+                <button class="btn btn-glowing btn-huge" id="openMenuBtn">KHÁM PHÁ THỰC ĐƠN TINH HOA</button>
             </div>
         </div>
     </section>
@@ -352,7 +365,7 @@
                         <li><span class="pt-check">&#10003;</span> FOC cao cấp: toàn bộ đội ngũ tài xế &amp; HDV</li>
                     </ul>
 
-                    <a href="https://zalo.me/" target="_blank" class="btn pt-btn">NHẬN BÁO GIÁ VIP</a>
+                    <a href="https://zalo.me/0706024684" target="_blank" class="btn pt-btn">NHẬN BÁO GIÁ VIP</a>
                 </div>
 
             </div><!-- /.pricing-grid -->
@@ -375,9 +388,9 @@
                 triển vọng với Casa Mika ngay hôm nay.
             </p>
             <div class="cta-actions">
-                <a href="Casa Mika Portfolio tiếng việt.pdf" target="_blank" class="btn btn-primary btn-large">📥 Tải Hồ
+                <a href="Casa Mika Portfolio tiếng việt.pdf" target="_blank" class="btn btn-primary btn-large">Tải Hồ
                     Sơ Năng Lực</a>
-                <a href="https://zalo.me/" target="_blank" class="btn btn-zalo btn-large">
+                <a href="https://zalo.me/0706024684" target="_blank" class="btn btn-zalo btn-large">
                     <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
                         stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
                         <path
@@ -399,18 +412,19 @@
             </div>
             <div class="footer-certs">
                 <div class="footer-cert-item">
-                    <span class="cert-icon">🛡️</span><span>ATVSTP</span>
+                    <span class="cert-icon" aria-hidden="true"></span><span>ATVSTP</span>
                 </div>
                 <div class="footer-cert-item">
-                    <span class="cert-icon">📜</span><span>Pháp Lý Chuẩn</span>
+                    <span class="cert-icon" aria-hidden="true"></span><span>Pháp Lý Chuẩn</span>
                 </div>
                 <div class="footer-cert-item">
-                    <span class="cert-icon">⭐</span><span>Dịch Vụ 5 Sao</span>
+                    <span class="cert-icon" aria-hidden="true"></span><span>Dịch Vụ 5 Sao</span>
                 </div>
             </div>
             <div class="footer-contact">
                 <p>📍 37 Trần Bạch Đằng, Phố Tây An Thượng, Ngũ Hành Sơn, Đà Nẵng</p>
                 <p>🕒 06:00 - 23:30 (Hàng ngày)</p>
+                <p>📞 <a href="tel:+84708888007">0708 888 007</a> &nbsp;·&nbsp; 💬 <a href="https://zalo.me/0706024684" target="_blank" rel="noopener">Zalo 0706 024 684</a></p>
             </div>
         </div>
         <div class="footer-bottom">

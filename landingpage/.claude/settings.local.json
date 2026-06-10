@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -vE 'http|#|css2|^[^:]+:[0-9]+:[^\"]*\"$')",
+      "Bash(git mv *)",
+      "Bash(node --check script.js)",
+      "Bash(awk '/MAIN SITE — index.html/,0' style.css)",
+      "Bash(awk '1;/MAIN SITE — index.html/{exit}' style.css)",
+      "Bash(xargs -I{} echo \"Remaining hard-coded: {}\")",
+      "Bash(xargs -I{} echo \"Using CSS variables: {}\")"
+    ]
+  }
+}

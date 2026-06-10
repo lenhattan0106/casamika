@@ -1,0 +1,8 @@
+# Python dependencies (cho mika_analysis.py)
+pandas
+openpyxl
+
+# ---- Ghi chú vận hành ----
+# Run local:    python3 -m http.server 8000
+# Deploy:       git add . && git commit -m "update" && git push origin main
+# Sinh file Excel phân tích:  python3 mika_analysis.py
