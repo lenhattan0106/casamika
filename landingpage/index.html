@@ -17,13 +17,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
         rel="stylesheet">
     <link rel="preload" as="image" href="image3d.jpg">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="site-main">
+<!--
+================================================================================
+  PHOTOGRAPHY BRIEF — pass to photographer / art director
+  All <div class="ms-photo-frame"> blocks below are placeholders awaiting final shots.
+  Each frame contains the brief (mood, framing, time of day) inside its caption.
+  Hero is using image3d.jpg as the current visual anchor — the brief for the
+  ideal replacement hero shot is:
+    "Drone or wide low-angle of the garden at golden hour. Glasshouse silhouette,
+     warm light through canopy, no visible people. Cinematic, very dark mid-tones,
+     gold highlights. 16:9 or wider, suitable as background for white display type."
+================================================================================
+-->
 
     <!-- ===== Nav ===== -->
     <nav class="ms-nav" id="msNav">
@@ -34,8 +46,8 @@
             </a>
             <div class="ms-nav-links" id="msNavLinks">
                 <a href="#house" class="ms-nav-link">The House</a>
-                <a href="#day" class="ms-nav-link">A Day Here</a>
                 <a href="#signature" class="ms-nav-link">Signature</a>
+                <a href="#atmosphere" class="ms-nav-link">Atmosphere</a>
                 <a href="#gallery" class="ms-nav-link">Gallery</a>
                 <a href="#reserve" class="ms-btn ms-btn-outline ms-btn-sm">Reserve</a>
             </div>
@@ -52,18 +64,11 @@
             <div class="ms-hero-overlay"></div>
         </div>
         <div class="container ms-hero-content">
-            <span class="ms-hero-eyebrow fade-up">37 Trần Bạch Đằng · An Thượng · Da Nang</span>
-            <h1 class="ms-hero-title fade-up delay-1">Where An Thượng<br><em>Lives Slowly.</em></h1>
-            <p class="ms-hero-sub fade-up delay-2">A 1,400m² garden table in the heart of Da Nang's old quarter — open
-                from first light to last call.</p>
+            <span class="ms-hero-eyebrow fade-up">An Thượng · Da Nang</span>
+            <h1 class="ms-hero-title fade-up delay-2">Where An Thượng<br><em>lives slowly.</em></h1>
             <div class="ms-hero-actions fade-up delay-3">
                 <a href="#reserve" class="ms-btn ms-btn-primary ms-btn-lg">Reserve a Table</a>
-                <a href="#house" class="ms-btn ms-btn-ghost ms-btn-lg">Discover the Space</a>
             </div>
-        </div>
-        <div class="ms-hero-scroll" aria-hidden="true">
-            <span>Scroll</span>
-            <span class="ms-hero-scroll-line"></span>
         </div>
     </header>
 
@@ -71,8 +76,11 @@
     <section class="ms-section ms-house" id="house">
         <div class="container ms-editorial">
             <div class="ms-editorial-img fade-in">
-                <img src="image/hinh1.jpg" alt="Casa Mika dining room" loading="lazy"
-                    onerror="this.src='https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?q=80&w=1200&auto=format&fit=crop'">
+                <div class="ms-photo-frame" style="--ratio: 4 / 5;">
+                    <span class="ms-photo-frame-tag">Photo brief · The House</span>
+                    <span class="ms-photo-frame-desc">Tall portrait of the main dining room, looking from the entrance toward the recessed fish-tank wall. Late afternoon, warm tungsten over the long table, garden visible through the glasshouse beyond. No guests in frame.</span>
+                    <span class="ms-photo-frame-ratio">4 : 5 portrait</span>
+                </div>
             </div>
             <div class="ms-editorial-text">
                 <span class="ms-eyebrow fade-up">— The House</span>
@@ -80,14 +88,24 @@
                 <p class="ms-lede fade-up delay-1">Tucked into the rhythm of An Thượng — Da Nang's quiet old neighborhood
                     for those who came and stayed — Casa Mika unfolds across 1,400 square metres of garden, glasshouse
                     and shaded terrace.</p>
-                <p class="ms-body fade-up delay-2">From breakfast at six to the last cocktail before midnight, the house
-                    keeps its own hours. Conversations linger. Time stretches. The garden remembers.</p>
+                <p class="ms-body fade-up delay-2">From the first morning coffee at half-six to the last cocktail
+                    before midnight, the garden keeps its own rhythm — set by the sun, the season, and the guest in
+                    front of us.</p>
                 <ul class="ms-house-meta fade-up delay-3">
                     <li><strong>1,400m²</strong><span>Garden &amp; glasshouse</span></li>
-                    <li><strong>06:00 – 23:30</strong><span>Open every day</span></li>
+                    <li><strong>06:30 – 23:30</strong><span>Open every day</span></li>
                     <li><strong>Asian · Western</strong><span>A fusion in conversation</span></li>
                 </ul>
             </div>
+        </div>
+    </section>
+
+    <!-- ===== Pull quote — quiet bridge ===== -->
+    <section class="ms-quote" aria-label="A note from the house">
+        <div class="container">
+            <blockquote class="ms-quote-body fade-up">
+                <p>The house keeps its own hours.<br>Conversations linger.<br><em>Time stretches.</em></p>
+            </blockquote>
         </div>
     </section>
 
@@ -102,17 +120,23 @@
         <div class="container ms-day-grid">
             <article class="ms-day-card fade-up">
                 <div class="ms-day-img">
-                    <img src="image/3fa202a4e67add53c5986fcdd9c7000d.jpg" alt="Morning at Casa Mika" loading="lazy"
-                        onerror="this.src='https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=900&auto=format&fit=crop'">
+                    <div class="ms-photo-frame" style="--ratio: 3 / 4;">
+                        <span class="ms-photo-frame-tag">Photo brief · Morning</span>
+                        <span class="ms-photo-frame-desc">Hands lifting a Vietnamese drip coffee from a marble side-table. Soft 7am side-light through garden leaves, dappled shadow. Linen napkin, brass spoon. Mood: hushed, unhurried.</span>
+                        <span class="ms-photo-frame-ratio">3 : 4 portrait</span>
+                    </div>
                 </div>
-                <span class="ms-day-time">06:00 — 10:30</span>
+                <span class="ms-day-time">06:30 — 10:30</span>
                 <h3 class="ms-day-name">Morning</h3>
-                <p class="ms-day-mood">Slow coffee under the canopy, garden breakfast, the city waking up around you.</p>
+                <p class="ms-day-mood">First light through the canopy, the kitchen quietly opens, the garden tunes itself for the day ahead.</p>
             </article>
             <article class="ms-day-card fade-up delay-1">
                 <div class="ms-day-img">
-                    <img src="image/haisan.jpg" alt="Noon at Casa Mika" loading="lazy"
-                        onerror="this.src='https://images.unsplash.com/photo-1559737558-2f5a35f4523b?q=80&w=900&auto=format&fit=crop'">
+                    <div class="ms-photo-frame" style="--ratio: 3 / 4;">
+                        <span class="ms-photo-frame-tag">Photo brief · Noon</span>
+                        <span class="ms-photo-frame-desc">Overhead shot of a long lunch: a chilled white wine, a fresh seafood platter on ice, hands reaching across the table. Bright noon light filtered by green canopy — high contrast, summer Mediterranean feel.</span>
+                        <span class="ms-photo-frame-ratio">3 : 4 portrait</span>
+                    </div>
                 </div>
                 <span class="ms-day-time">11:30 — 14:30</span>
                 <h3 class="ms-day-name">Noon</h3>
@@ -120,8 +144,11 @@
             </article>
             <article class="ms-day-card fade-up delay-2">
                 <div class="ms-day-img">
-                    <img src="image/beeffuji.jpg" alt="Evening at Casa Mika" loading="lazy"
-                        onerror="this.src='https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=900&auto=format&fit=crop'">
+                    <div class="ms-photo-frame" style="--ratio: 3 / 4;">
+                        <span class="ms-photo-frame-tag">Photo brief · Evening</span>
+                        <span class="ms-photo-frame-desc">Close-up of Fuji beef searing on a hot volcanic stone, smoke catching candlelight. The chef's hands in soft focus behind. Dark background, deep amber and gold highlights. Tableside theatre.</span>
+                        <span class="ms-photo-frame-ratio">3 : 4 portrait</span>
+                    </div>
                 </div>
                 <span class="ms-day-time">17:30 — 22:00</span>
                 <h3 class="ms-day-name">Evening</h3>
@@ -129,12 +156,15 @@
             </article>
             <article class="ms-day-card fade-up delay-3">
                 <div class="ms-day-img">
-                    <img src="image/NightCocktail.jpg" alt="Night at Casa Mika" loading="lazy"
-                        onerror="this.src='https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=900&auto=format&fit=crop'">
+                    <div class="ms-photo-frame" style="--ratio: 3 / 4;">
+                        <span class="ms-photo-frame-tag">Photo brief · Night</span>
+                        <span class="ms-photo-frame-desc">A signature cocktail in shallow depth-of-field, a sliver of garden light bouncing off the rim. The pianist's silhouette out of focus behind. Very low key, blacks and gold, single source light.</span>
+                        <span class="ms-photo-frame-ratio">3 : 4 portrait</span>
+                    </div>
                 </div>
                 <span class="ms-day-time">21:00 — 23:30</span>
                 <h3 class="ms-day-name">Night</h3>
-                <p class="ms-day-mood">Signature cocktails, low music, An Thượng nightlife in a single glass.</p>
+                <p class="ms-day-mood">Signature cocktails, piano in the main hall, An Thượng nightlife in a single glass.</p>
             </article>
         </div>
     </section>
@@ -150,8 +180,11 @@
         <div class="container ms-signature-grid">
             <article class="ms-sig-card fade-up">
                 <div class="ms-sig-img">
-                    <img src="image/haisan.jpg" alt="Asian Seafood Platter" loading="lazy"
-                        onerror="this.src='https://images.unsplash.com/photo-1559737558-2f5a35f4523b?q=80&w=1200&auto=format&fit=crop'">
+                    <div class="ms-photo-frame" style="--ratio: 4 / 3;">
+                        <span class="ms-photo-frame-tag">Photo brief · Seafood</span>
+                        <span class="ms-photo-frame-desc">Overhead, tightly cropped: oysters, raw prawns, citrus wedges on crushed ice on a dark slate platter. A bright lemon highlight, otherwise moody and cool. No props beyond a single silver pick.</span>
+                        <span class="ms-photo-frame-ratio">4 : 3 landscape</span>
+                    </div>
                 </div>
                 <div class="ms-sig-info">
                     <span class="ms-sig-tag">Eastern</span>
@@ -161,8 +194,11 @@
             </article>
             <article class="ms-sig-card fade-up delay-1">
                 <div class="ms-sig-img">
-                    <img src="image/beeffuji.jpg" alt="Fuji Beef on Stone" loading="lazy"
-                        onerror="this.src='https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop'">
+                    <div class="ms-photo-frame" style="--ratio: 4 / 3;">
+                        <span class="ms-photo-frame-tag">Photo brief · Beef</span>
+                        <span class="ms-photo-frame-desc">Three-quarter angle of marbled Fuji beef searing on a glowing volcanic stone, smoke rising into a dark backdrop. Visible grain, butter melting, single warm key light. The hero shot — book the photographer's best hour for this.</span>
+                        <span class="ms-photo-frame-ratio">4 : 3 landscape</span>
+                    </div>
                 </div>
                 <div class="ms-sig-info">
                     <span class="ms-sig-tag">Western</span>
@@ -172,8 +208,11 @@
             </article>
             <article class="ms-sig-card fade-up delay-2">
                 <div class="ms-sig-img">
-                    <img src="image/NightCocktail.jpg" alt="An Thượng Night Cocktail" loading="lazy"
-                        onerror="this.src='https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=1200&auto=format&fit=crop'">
+                    <div class="ms-photo-frame" style="--ratio: 4 / 3;">
+                        <span class="ms-photo-frame-tag">Photo brief · Cocktail</span>
+                        <span class="ms-photo-frame-desc">A tall coupe glass with a smoky amber cocktail, single ice block, an orange-peel garnish. Backlit so steam/smoke is visible. Almost monochrome dark, only the drink glows.</span>
+                        <span class="ms-photo-frame-ratio">4 : 3 landscape</span>
+                    </div>
                 </div>
                 <div class="ms-sig-info">
                     <span class="ms-sig-tag">Bar</span>
@@ -183,9 +222,63 @@
             </article>
         </div>
         <div class="container center-text ms-signature-cta">
-            <button class="ms-btn ms-btn-outline ms-btn-lg" id="msMenuBtn" disabled aria-disabled="true"
-                title="The full menu is being finalised — please call us in the meantime.">View Full Menu — Coming
-                Soon</button>
+            <p class="ms-menu-note fade-up">Full menu available on request — <a href="tel:+84708888007">please call</a>.</p>
+        </div>
+    </section>
+
+    <!-- ===== Atmosphere & Private Events ===== -->
+    <section class="ms-section ms-atmos" id="atmosphere">
+        <div class="container center-text">
+            <span class="ms-eyebrow fade-up">— Atmosphere</span>
+            <h2 class="ms-title fade-up">Two quiet thefts<br><em>of attention.</em></h2>
+            <p class="ms-section-sub fade-up delay-1">A wall that breathes. A piano that listens. Built into the
+                architecture of the house, not added to it.</p>
+        </div>
+        <div class="container ms-atmos-grid">
+            <article class="ms-atmos-card fade-up">
+                <div class="ms-atmos-img">
+                    <div class="ms-photo-frame" style="--ratio: 4 / 5;">
+                        <span class="ms-photo-frame-tag">Photo brief · Fish-tank wall</span>
+                        <span class="ms-photo-frame-desc">A recessed wall aquarium running the length of the main dining
+                            room. Blue-green light spilling onto the floor, silhouette of a guest seated in foreground.
+                            Long exposure to soften the water. Cinematic, dark surroundings.</span>
+                        <span class="ms-photo-frame-ratio">4 : 5 portrait</span>
+                    </div>
+                </div>
+                <span class="ms-atmos-tag">In the main hall</span>
+                <h3 class="ms-atmos-name">The Fish-Tank Wall</h3>
+                <p class="ms-atmos-desc">A recessed aquarium running the length of the main dining room — the slow
+                    movement of water as ambient theatre, the room's quiet metronome.</p>
+            </article>
+            <article class="ms-atmos-card fade-up delay-1">
+                <div class="ms-atmos-img">
+                    <div class="ms-photo-frame" style="--ratio: 4 / 5;">
+                        <span class="ms-photo-frame-tag">Photo brief · Live piano</span>
+                        <span class="ms-photo-frame-desc">Pianist mid-performance at a grand piano in the lobby/main
+                            hall. Shot from behind the player, looking past the keys toward the dining room. Warm
+                            spotlight on the hands. Evening, low ambient light, no flash.</span>
+                        <span class="ms-photo-frame-ratio">4 : 5 portrait</span>
+                    </div>
+                </div>
+                <span class="ms-atmos-tag">From the lobby</span>
+                <h3 class="ms-atmos-name">A Pianist, Each Evening</h3>
+                <p class="ms-atmos-desc">A live grand piano in the main hall every night from seven — chosen for the
+                    room, not the stage. Conversation stays the loudest sound at the table.</p>
+            </article>
+        </div>
+        <div class="container ms-atmos-events fade-up delay-2">
+            <div class="ms-atmos-events-text">
+                <span class="ms-eyebrow">— Private Events</span>
+                <h3 class="ms-atmos-events-title">A 1,400m² garden, <em>set for your evening.</em></h3>
+                <p>Weddings, milestone birthdays, corporate dinners, brand launches. The glasshouse seats 60. The
+                    terrace, 120. The full garden, up to 300. Tailored menus from the kitchen, sommelier on request,
+                    discreet service throughout.</p>
+            </div>
+            <div class="ms-atmos-events-cta">
+                <a href="https://zalo.me/0706024684" target="_blank" rel="noopener"
+                    class="ms-btn ms-btn-primary ms-btn-lg">Plan an Event on Zalo</a>
+                <a href="tel:+84708888007" class="ms-atmos-events-tel">or call +84 708 888 007</a>
+            </div>
         </div>
     </section>
 
@@ -196,30 +289,144 @@
             <h2 class="ms-title fade-up">Inside <em>the house.</em></h2>
         </div>
         <div class="container ms-gallery">
-            <a class="ms-gal-item ms-gal-tall fade-up" href="image3d.jpg" data-lightbox
-                aria-label="Open Casa Mika exterior in lightbox">
-                <img src="image3d.jpg" alt="Casa Mika exterior" loading="lazy">
+            <div class="ms-gal-item ms-gal-tall fade-up">
+                <div class="ms-photo-frame" style="--ratio: 3 / 4;">
+                    <span class="ms-photo-frame-tag">Gallery · Garden</span>
+                    <span class="ms-photo-frame-desc">Vertical drone or ladder shot of the garden + glasshouse from above, golden hour. Should feel like an aerial portrait. The signature hero shot of the property.</span>
+                    <span class="ms-photo-frame-ratio">3 : 4 portrait · tall</span>
+                </div>
+                <span class="ms-gal-caption">The garden, at first light</span>
+            </div>
+            <div class="ms-gal-item fade-up delay-1">
+                <div class="ms-photo-frame" style="--ratio: 4 / 3;">
+                    <span class="ms-photo-frame-tag">Gallery · Long table</span>
+                    <span class="ms-photo-frame-desc">Long communal table set for service — linen, glassware in a row, candle flames. Looking down the length of the table, focal point at the far end.</span>
+                    <span class="ms-photo-frame-ratio">4 : 3 landscape</span>
+                </div>
+                <span class="ms-gal-caption">The long table</span>
+            </div>
+            <div class="ms-gal-item fade-up delay-2">
+                <div class="ms-photo-frame" style="--ratio: 4 / 3;">
+                    <span class="ms-photo-frame-tag">Gallery · Glasshouse</span>
+                    <span class="ms-photo-frame-desc">Interior of the glasshouse mid-afternoon — sunlight through panels, plants, one empty table. Architectural feeling, no people. Warm green-gold palette.</span>
+                    <span class="ms-photo-frame-ratio">4 : 3 landscape</span>
+                </div>
+                <span class="ms-gal-caption">Glasshouse afternoon</span>
+            </div>
+            <div class="ms-gal-item fade-up delay-3">
+                <div class="ms-photo-frame" style="--ratio: 4 / 3;">
+                    <span class="ms-photo-frame-tag">Gallery · Terrace</span>
+                    <span class="ms-photo-frame-desc">Shaded terrace at dusk, lanterns on. Two empty chairs and a low table, garden beyond. Mood: invitation, intimacy.</span>
+                    <span class="ms-photo-frame-ratio">4 : 3 landscape</span>
+                </div>
+                <span class="ms-gal-caption">Terrace, into the evening</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Voices (social proof) =====
+         NOTE: ratings and testimonials below are PLACEHOLDERS for layout review.
+         Replace with real TripAdvisor/Google data and verified guest quotes
+         before going to production. -->
+    <section class="ms-section ms-voices" id="voices">
+        <div class="container center-text">
+            <span class="ms-eyebrow fade-up">— Voices</span>
+            <h2 class="ms-title fade-up">Quiet praise,<br><em>slowly earned.</em></h2>
+        </div>
+        <div class="container ms-voices-ratings fade-up delay-1">
+            <div class="ms-rating">
+                <span class="ms-rating-stars" aria-hidden="true">★★★★★</span>
+                <span class="ms-rating-score">4.8</span>
+                <span class="ms-rating-meta">TripAdvisor · 1,240+ reviews</span>
+            </div>
+            <div class="ms-rating">
+                <span class="ms-rating-stars" aria-hidden="true">★★★★★</span>
+                <span class="ms-rating-score">4.7</span>
+                <span class="ms-rating-meta">Google · 980+ reviews</span>
+            </div>
+            <div class="ms-rating">
+                <span class="ms-rating-stars" aria-hidden="true">★★★★★</span>
+                <span class="ms-rating-score">9.4</span>
+                <span class="ms-rating-meta">Klook · Top 1% restaurants</span>
+            </div>
+        </div>
+        <div class="container ms-voices-grid">
+            <blockquote class="ms-voice fade-up">
+                <p>"We came back three nights in a row. By the second night the staff knew our wine, by the third they
+                    knew our story. That doesn't happen often anymore."</p>
+                <footer>— K. T., Hong Kong</footer>
+            </blockquote>
+            <blockquote class="ms-voice fade-up delay-1">
+                <p>"The beef on stone is theatre — but it's the garden between courses we remember. We sat for four
+                    hours and felt like we'd booked the place out."</p>
+                <footer>— M. R., Sydney</footer>
+            </blockquote>
+            <blockquote class="ms-voice fade-up delay-2">
+                <p>"A rare quiet in the middle of An Thượng. The pianist played something I half-recognised. My partner
+                    said yes before dessert."</p>
+                <footer>— J. L., Singapore</footer>
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- ===== Instagram feed =====
+         NOTE: tiles below are placeholders. When the @casamika.official feed
+         goes live, replace with a Lightwidget / Curator.io / Instagram Basic
+         Display API embed, or hand-pick the 6 most recent grid images. -->
+    <section class="ms-section ms-insta" id="insta">
+        <div class="container center-text">
+            <span class="ms-eyebrow fade-up">— Follow the garden</span>
+            <h2 class="ms-title fade-up"><em>@casamika.official</em></h2>
+            <p class="ms-section-sub fade-up delay-1">A slower scroll. One frame a day, mostly the kitchen, sometimes the
+                garden, occasionally the cat.</p>
+        </div>
+        <div class="container ms-insta-grid">
+            <a class="ms-insta-tile fade-up" href="https://www.instagram.com/casamika.official/" target="_blank"
+                rel="noopener" aria-label="See on Instagram">
+                <div class="ms-photo-frame" style="--ratio: 1 / 1;">
+                    <span class="ms-photo-frame-tag">IG · 01</span>
+                    <span class="ms-photo-frame-desc">Hands plating the Fuji beef tartare from above. Square.</span>
+                </div>
             </a>
-            <a class="ms-gal-item fade-up delay-1" href="brochure.jpg" data-lightbox
-                aria-label="Open Casa Mika garden in lightbox">
-                <img src="brochure.jpg" alt="Casa Mika garden" loading="lazy">
+            <a class="ms-insta-tile fade-up delay-1" href="https://www.instagram.com/casamika.official/" target="_blank"
+                rel="noopener" aria-label="See on Instagram">
+                <div class="ms-photo-frame" style="--ratio: 1 / 1;">
+                    <span class="ms-photo-frame-tag">IG · 02</span>
+                    <span class="ms-photo-frame-desc">Garden at first light — empty terrace, dew.</span>
+                </div>
             </a>
-            <a class="ms-gal-item fade-up delay-2" href="image/hinh1.jpg" data-lightbox
-                aria-label="Open Casa Mika dining in lightbox">
-                <img src="image/hinh1.jpg" alt="Casa Mika dining" loading="lazy">
+            <a class="ms-insta-tile fade-up delay-2" href="https://www.instagram.com/casamika.official/" target="_blank"
+                rel="noopener" aria-label="See on Instagram">
+                <div class="ms-photo-frame" style="--ratio: 1 / 1;">
+                    <span class="ms-photo-frame-tag">IG · 03</span>
+                    <span class="ms-photo-frame-desc">Cocktail close-up, smoke catching gold light.</span>
+                </div>
             </a>
-            <a class="ms-gal-item fade-up" href="deal.jpg" data-lightbox
-                aria-label="Open Casa Mika service in lightbox">
-                <img src="deal.jpg" alt="Casa Mika service" loading="lazy">
+            <a class="ms-insta-tile fade-up" href="https://www.instagram.com/casamika.official/" target="_blank"
+                rel="noopener" aria-label="See on Instagram">
+                <div class="ms-photo-frame" style="--ratio: 1 / 1;">
+                    <span class="ms-photo-frame-tag">IG · 04</span>
+                    <span class="ms-photo-frame-desc">Sommelier pouring at the long table.</span>
+                </div>
             </a>
-            <a class="ms-gal-item ms-gal-wide fade-up delay-1" href="image/parter.jpg" data-lightbox
-                aria-label="Open Casa Mika terrace in lightbox">
-                <img src="image/parter.jpg" alt="Casa Mika terrace" loading="lazy">
+            <a class="ms-insta-tile fade-up delay-1" href="https://www.instagram.com/casamika.official/" target="_blank"
+                rel="noopener" aria-label="See on Instagram">
+                <div class="ms-photo-frame" style="--ratio: 1 / 1;">
+                    <span class="ms-photo-frame-tag">IG · 05</span>
+                    <span class="ms-photo-frame-desc">Pianist's hands on the keys — black &amp; white.</span>
+                </div>
             </a>
-            <a class="ms-gal-item fade-up delay-2" href="avatar.jpg" data-lightbox
-                aria-label="Open Casa Mika detail in lightbox">
-                <img src="avatar.jpg" alt="Casa Mika detail" loading="lazy">
+            <a class="ms-insta-tile fade-up delay-2" href="https://www.instagram.com/casamika.official/" target="_blank"
+                rel="noopener" aria-label="See on Instagram">
+                <div class="ms-photo-frame" style="--ratio: 1 / 1;">
+                    <span class="ms-photo-frame-tag">IG · 06</span>
+                    <span class="ms-photo-frame-desc">Garden cat asleep on a wicker chair.</span>
+                </div>
             </a>
+        </div>
+        <div class="container center-text ms-insta-cta">
+            <a href="https://www.instagram.com/casamika.official/" target="_blank" rel="noopener"
+                class="ms-btn ms-btn-outline">Follow on Instagram</a>
         </div>
     </section>
 
@@ -229,8 +436,9 @@
             <div class="ms-reserve-text">
                 <span class="ms-eyebrow fade-up">— Reserve</span>
                 <h2 class="ms-title fade-up">Save a seat<br><em>at the garden table.</em></h2>
-                <p class="ms-body fade-up delay-1">Open daily, 06:00 – 23:30. We recommend reserving in advance for
-                    dinner and weekends. Walk-ins welcome whenever the kitchen is on.</p>
+                <p class="ms-body fade-up delay-1">Open daily, 06:30 – 23:30. We recommend reserving in advance for
+                    dinner and weekends — <strong>Zalo is the fastest way to reach the host stand.</strong> Walk-ins welcome
+                    whenever the kitchen is on.</p>
                 <dl class="ms-reserve-meta fade-up delay-2">
                     <div>
                         <dt>Address</dt>
@@ -238,25 +446,13 @@
                     </div>
                     <div>
                         <dt>Hours</dt>
-                        <dd>Every day · 06:00 – 23:30</dd>
+                        <dd>Every day · 06:30 – 23:30</dd>
                     </div>
                 </dl>
             </div>
             <div class="ms-reserve-actions">
-                <a href="tel:+84708888007" class="ms-contact-card fade-up">
-                    <span class="ms-contact-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
-                            stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                            <path
-                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.73 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.36 1.85.6 2.81.73A2 2 0 0 1 22 16.92z" />
-                        </svg>
-                    </span>
-                    <div class="ms-contact-text">
-                        <span class="ms-contact-label">Call us</span>
-                        <span class="ms-contact-value">+84 708 888 007</span>
-                    </div>
-                </a>
-                <a href="https://zalo.me/0706024684" target="_blank" rel="noopener" class="ms-contact-card fade-up delay-1">
+                <a href="https://zalo.me/0706024684" target="_blank" rel="noopener"
+                    class="ms-contact-card ms-contact-card-primary fade-up">
                     <span class="ms-contact-icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
                             stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -265,8 +461,21 @@
                         </svg>
                     </span>
                     <div class="ms-contact-text">
-                        <span class="ms-contact-label">Chat on Zalo</span>
+                        <span class="ms-contact-label">Reserve via Zalo · Fastest reply</span>
                         <span class="ms-contact-value">+84 706 024 684</span>
+                    </div>
+                </a>
+                <a href="tel:+84708888007" class="ms-contact-card fade-up delay-1">
+                    <span class="ms-contact-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
+                            stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.73 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.36 1.85.6 2.81.73A2 2 0 0 1 22 16.92z" />
+                        </svg>
+                    </span>
+                    <div class="ms-contact-text">
+                        <span class="ms-contact-label">Call the host stand</span>
+                        <span class="ms-contact-value">+84 708 888 007</span>
                     </div>
                 </a>
                 <a href="https://maps.app.goo.gl/qsTUVr82UATkvFJv5" target="_blank" rel="noopener"
