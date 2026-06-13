@@ -1,13 +1,17 @@
 # Casa Mika — Landing Pages
 
-Site có **2 trang HTML** chạy chung style.css + script.js:
+Site có **4 trang HTML** chạy chung style.css + script.js:
 
 | URL | File | Audience | Ngôn ngữ | Mục đích |
 |---|---|---|---|---|
-| `/` | **`index.html`** | Khách lẻ (chính) | **English** | Luxury B2C, đặt bàn |
+| `/` | **`index.html`** | Khách lẻ (chính, mặc định) | **English** | Luxury B2C, đặt bàn |
+| `/vi/` | **`vi/index.html`** | Khách lẻ VN | **Tiếng Việt** | Luxury B2C, đặt bàn |
+| `/de/` | **`de/index.html`** | Khách lẻ DE | **Deutsch** | Luxury B2C, đặt bàn |
 | `/doi-tac.html` | **`doi-tac.html`** | Đối tác (HDV, tài xế, tour) | Tiếng Việt | B2B partnership (commission) |
 
 Stack: HTML/CSS/JS thuần, **không build step**. Deploy Vercel (push main branch → auto).
+
+**Path convention (quan trọng):** 3 trang B2C (`/`, `/vi/`, `/de/`) dùng **root-absolute paths** (`/image/...`, `/style.css`, `/script.js`, `/doi-tac.html`) để code đồng nhất bất kể nested level. `doi-tac.html` vẫn dùng relative (`image/...`) — không đổi.
 
 ---
 
@@ -15,27 +19,71 @@ Stack: HTML/CSS/JS thuần, **không build step**. Deploy Vercel (push main bran
 
 ```
 landingpage/
-├── index.html        # TRANG CHÍNH — EN luxury B2C
-├── doi-tac.html      # TRANG B2B — VN partner (có back-link sang index)
+├── index.html        # B2C EN — entry mặc định, có auto-redirect tới /vi/ hoặc /de/
+├── vi/
+│   └── index.html    # B2C Tiếng Việt
+├── de/
+│   └── index.html    # B2C Deutsch
+├── doi-tac.html      # B2B VN partner (có back-link sang index)
 ├── style.css         # 1 file chung — phần MAIN SITE đánh dấu bằng banner comment
-├── script.js         # 1 file chung — đều dùng null-check để chạy được trên 2 trang
+├── script.js         # 1 file chung — đều dùng null-check để chạy được trên mọi trang
 ├── PLAN.md           # Plan ban đầu của trang mới (đã hoàn thành)
 ├── CLAUDE.md         # File này
 ├── requirement.txt   # Python deps (pandas, openpyxl) + ghi chú vận hành
 ├── mika_analysis.py  # Sinh restaurant_cost_analysis_mika_casa.xlsx
 ├── restaurant_cost_analysis_mika_casa.xlsx
 ├── Casa Mika Portfolio tiếng việt.pdf   # link "Tải Hồ Sơ" trên doi-tac.html
-├── logo.png, image3d.jpg               # Hero background + CTA bg cho cả 2 trang
-├── avatar.jpg, brochure.jpg, deal.jpg  # Gallery trang chính
-├── Màu be và Nâu Sẫm...Email.jpg
-└── image/
-    ├── hinh1.jpg          # Policy (B2B) + About (main) + Gallery (main)
-    ├── haisan.jpg         # Signature seafood (cả 2 trang)
-    ├── beeffuji.jpg       # Signature beef (cả 2 trang)
-    ├── NightCocktail.jpg  # Signature cocktail (cả 2 trang)
-    ├── parter.jpg         # Gallery trang chính
-    └── 3fa202a4...jpg     # Morning shot trang chính
+└── image/                              # TẤT CẢ ảnh nằm trong đây
+    ├── logo.png              # Logo nav + footer (mọi trang)
+    ├── image3d.jpg           # Hero background + CTA bg (mọi trang)
+    ├── hinh1.jpg             # Policy section (doi-tac.html)
+    ├── haisan.jpg            # Signature seafood (doi-tac.html)
+    ├── beeffuji.jpg          # Signature beef (doi-tac.html)
+    ├── NightCocktail.jpg     # Signature cocktail (doi-tac.html)
+    ├── avatar.jpg            # Asset chờ wire vào index gallery
+    ├── brochure.jpg          # Asset chờ wire vào index gallery
+    ├── deal.jpg              # Asset chờ wire vào index gallery
+    ├── parter.jpg            # Asset chờ wire vào index gallery
+    ├── 3fa202a4...jpg        # Asset chờ wire vào index "Morning"
+    └── email-signature.jpg   # Chữ ký email (asset thương hiệu, chưa dùng trong web)
 ```
+
+---
+
+## i18n (3 ngôn ngữ: EN / VI / DE)
+
+### Quy tắc dịch (đã chốt với user)
+- **Tagline** dịch sang cả 3 ngôn ngữ:
+  - EN: "Where An Thượng Lives Slowly"
+  - VI: "Nơi An Thượng sống thật chậm"
+  - DE: "Wo An Thượng langsam lebt"
+- **Tên món signature giữ tiếng Anh** trên cả 3 phiên bản: *Asian Seafood Platter*, *Fuji Beef on Stone*, *An Thượng Night*.
+- **Brand "Casa Mika"**, địa danh "An Thượng", số điện thoại, giờ mở cửa: giữ nguyên format gốc.
+
+### Language switcher
+- HTML markup: `<span class="ms-lang-switch">` chứa 3 link `<a class="ms-lang" data-lang="en|vi|de">`. Link đang active có thêm `is-active` + `aria-current="page"`.
+- CSS: `.ms-lang-switch`, `.ms-lang`, `.ms-lang-sep` ở `style.css` (gần block `.ms-nav-link`). Trên mobile drawer tự stack qua media query.
+- JS persist: `script.js` có listener trên mọi `[data-lang]` — click sẽ `localStorage.setItem('mika-lang', this.dataset.lang)`.
+
+### Auto-redirect (chỉ trên `/`)
+- Inline script ở đầu `<head>` trong `index.html` (root EN), **không có trong `vi/` và `de/`**:
+  - Nếu path không phải `/` hoặc `/index.html` → bỏ qua (chạy phòng hờ cache CDN).
+  - Đọc `localStorage.mika-lang` → nếu có dùng nó; nếu không dùng `navigator.language.slice(0,2)`.
+  - Nếu = `vi` → `location.replace('/vi/')`. Nếu = `de` → `location.replace('/de/')`. Còn lại (`en` hoặc không xác định) → ở `/`.
+- User chọn thủ công qua switcher sẽ ghi localStorage → quyết định stick lâu dài.
+
+### SEO hreflang
+Cả 3 trang B2C đều có:
+```html
+<link rel="canonical" href="https://casamika.com/{lang}/">
+<link rel="alternate" hreflang="en" href="https://casamika.com/">
+<link rel="alternate" hreflang="vi" href="https://casamika.com/vi/">
+<link rel="alternate" hreflang="de" href="https://casamika.com/de/">
+<link rel="alternate" hreflang="x-default" href="https://casamika.com/">
+```
+
+### Khi đổi nội dung
+Phải sửa **3 file** (`index.html`, `vi/index.html`, `de/index.html`). Đây là trade-off của Cách A (multi-file). Nếu sau này nội dung đổi liên tục, cân nhắc lên SSG (Astro/11ty).
 
 ---
 

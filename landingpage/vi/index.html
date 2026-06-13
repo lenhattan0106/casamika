@@ -1,45 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="theme-color" content="#1A1410">
-    <script>
-    (function () {
-        try {
-            if (location.pathname !== '/' && location.pathname !== '/index.html') return;
-
-            // 1. URL param ?lang=xx — explicit override (used by switcher EN links)
-            var params = location.search ? new URLSearchParams(location.search) : null;
-            var force = params ? params.get('lang') : null;
-            if (force) {
-                localStorage.setItem('mika-lang', force);
-                if (force === 'vi') { location.replace('/vi/'); return; }
-                if (force === 'de') { location.replace('/de/'); return; }
-                try { history.replaceState(null, '', '/'); } catch (e) { }
-                return;
-            }
-
-            // 2. Saved preference (returning visitor) or browser language (first visit)
-            var saved = localStorage.getItem('mika-lang');
-            var lang = saved || (navigator.language || '').slice(0, 2).toLowerCase();
-            if (lang === 'vi') location.replace('/vi/');
-            else if (lang === 'de') location.replace('/de/');
-            else localStorage.setItem('mika-lang', 'en');
-        } catch (e) { }
-    })();
-    </script>
+    <script>try { localStorage.setItem('mika-lang', 'vi'); } catch (e) { }</script>
     <meta name="description"
-        content="Casa Mika — A 1,400m² garden table in An Thượng, Da Nang. Open daily 06:00 – 23:30. Asian-Western fusion, garden dining, signature cocktails.">
-    <meta property="og:title" content="Casa Mika — Where An Thượng Lives Slowly">
+        content="Casa Mika — 1.400m² bàn vườn giữa An Thượng, Đà Nẵng. Mở cửa hàng ngày 06:00 – 23:30. Tinh hoa Á–Âu, không gian vườn, cocktail đặc trưng.">
+    <meta property="og:title" content="Casa Mika — Nơi An Thượng sống thật chậm">
     <meta property="og:description"
-        content="A 1,400m² garden table in the heart of Da Nang's old quarter — open from first light to last call.">
+        content="Bàn vườn 1.400m² giữa lòng khu phố cũ Đà Nẵng — mở cửa từ tia nắng đầu đến ly cocktail cuối.">
     <meta property="og:image" content="/image/image3d.jpg">
     <meta property="og:type" content="website">
-    <title>Casa Mika — Where An Thượng Lives Slowly</title>
+    <title>Casa Mika — Nơi An Thượng sống thật chậm</title>
 
-    <link rel="canonical" href="https://casamika.com/">
+    <link rel="canonical" href="https://casamika.com/vi/">
     <link rel="alternate" hreflang="en" href="https://casamika.com/">
     <link rel="alternate" hreflang="vi" href="https://casamika.com/vi/">
     <link rel="alternate" hreflang="de" href="https://casamika.com/de/">
@@ -55,41 +31,29 @@
 </head>
 
 <body class="site-main">
-<!--
-================================================================================
-  PHOTOGRAPHY BRIEF — pass to photographer / art director
-  All <div class="ms-photo-frame"> blocks below are placeholders awaiting final shots.
-  Each frame contains the brief (mood, framing, time of day) inside its caption.
-  Hero is using image3d.jpg as the current visual anchor — the brief for the
-  ideal replacement hero shot is:
-    "Drone or wide low-angle of the garden at golden hour. Glasshouse silhouette,
-     warm light through canopy, no visible people. Cinematic, very dark mid-tones,
-     gold highlights. 16:9 or wider, suitable as background for white display type."
-================================================================================
--->
 
     <!-- ===== Nav ===== -->
     <nav class="ms-nav" id="msNav">
         <div class="container ms-nav-inner">
-            <a href="/" class="ms-logo" aria-label="Casa Mika home">
+            <a href="/vi/" class="ms-logo" aria-label="Casa Mika trang chủ">
                 <img src="/image/logo.png" alt="Casa Mika"
                     onerror="this.outerHTML='<span class=&quot;ms-logo-text&quot;>CASA MIKA</span>';">
             </a>
             <div class="ms-nav-links" id="msNavLinks">
-                <a href="#house" class="ms-nav-link">The House</a>
-                <a href="#signature" class="ms-nav-link">Signature</a>
-                <a href="#atmosphere" class="ms-nav-link">Atmosphere</a>
-                <a href="#gallery" class="ms-nav-link">Gallery</a>
-                <a href="#reserve" class="ms-btn ms-btn-outline ms-btn-sm">Reserve</a>
+                <a href="#house" class="ms-nav-link">Ngôi Nhà</a>
+                <a href="#signature" class="ms-nav-link">Đặc Trưng</a>
+                <a href="#atmosphere" class="ms-nav-link">Không Gian</a>
+                <a href="#gallery" class="ms-nav-link">Hình Ảnh</a>
+                <a href="#reserve" class="ms-btn ms-btn-outline ms-btn-sm">Đặt Bàn</a>
             </div>
-            <span class="ms-lang-switch" role="group" aria-label="Language">
-                <a href="/vi/" class="ms-lang" data-lang="vi" hreflang="vi">VI</a>
+            <span class="ms-lang-switch" role="group" aria-label="Ngôn ngữ">
+                <a href="/vi/" class="ms-lang is-active" data-lang="vi" aria-current="page">VI</a>
                 <span class="ms-lang-sep" aria-hidden="true">|</span>
-                <a href="/" class="ms-lang is-active" data-lang="en" aria-current="page">EN</a>
+                <a href="/?lang=en" class="ms-lang" data-lang="en" hreflang="en">EN</a>
                 <span class="ms-lang-sep" aria-hidden="true">|</span>
                 <a href="/de/" class="ms-lang" data-lang="de" hreflang="de">DE</a>
             </span>
-            <button class="ms-nav-toggle" id="msNavToggle" aria-label="Open menu" aria-expanded="false">
+            <button class="ms-nav-toggle" id="msNavToggle" aria-label="Mở menu" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
         </div>
@@ -102,107 +66,102 @@
             <div class="ms-hero-overlay"></div>
         </div>
         <div class="container ms-hero-content">
-            <span class="ms-hero-eyebrow fade-up">An Thượng · Da Nang</span>
-            <h1 class="ms-hero-title fade-up delay-2">Where An Thượng<br><em>lives slowly.</em></h1>
+            <span class="ms-hero-eyebrow fade-up">An Thượng · Đà Nẵng</span>
+            <h1 class="ms-hero-title fade-up delay-2">Nơi An Thượng<br><em>sống thật chậm.</em></h1>
             <div class="ms-hero-actions fade-up delay-3">
-                <a href="#reserve" class="ms-btn ms-btn-primary ms-btn-lg">Reserve a Table</a>
+                <a href="#reserve" class="ms-btn ms-btn-primary ms-btn-lg">Đặt Bàn</a>
             </div>
         </div>
     </header>
 
-    <!-- ===== The House ===== -->
+    <!-- ===== Ngôi Nhà ===== -->
     <section class="ms-section ms-house" id="house">
         <div class="container ms-editorial">
             <div class="ms-editorial-img fade-in">
                 <div class="ms-photo-frame" style="--ratio: 4 / 5;">
                     <span class="ms-photo-frame-tag">Photo brief · The House</span>
-                    <span class="ms-photo-frame-desc">Tall portrait of the main dining room, looking from the entrance toward the recessed fish-tank wall. Late afternoon, warm tungsten over the long table, garden visible through the glasshouse beyond. No guests in frame.</span>
+                    <span class="ms-photo-frame-desc">Tall portrait of the main dining room, looking from the entrance toward the recessed fish-tank wall.</span>
                     <span class="ms-photo-frame-ratio">4 : 5 portrait</span>
                 </div>
             </div>
             <div class="ms-editorial-text">
-                <span class="ms-eyebrow fade-up">— The House</span>
-                <h2 class="ms-title fade-up">A garden, a kitchen,<br><em>a long table.</em></h2>
-                <p class="ms-lede fade-up delay-1">Tucked into the rhythm of An Thượng — Da Nang's quiet old neighborhood
-                    for those who came and stayed — Casa Mika unfolds across 1,400 square metres of garden, glasshouse
-                    and shaded terrace.</p>
-                <p class="ms-body fade-up delay-2">From the first morning coffee at half-six to the last cocktail
-                    before midnight, the garden keeps its own rhythm — set by the sun, the season, and the guest in
-                    front of us.</p>
+                <span class="ms-eyebrow fade-up">— Ngôi Nhà</span>
+                <h2 class="ms-title fade-up">Một khu vườn, một gian bếp,<br><em>một chiếc bàn dài.</em></h2>
+                <p class="ms-lede fade-up delay-1">Nép vào nhịp sống An Thượng — khu phố cũ yên ả của Đà Nẵng, nơi của những người đã đến và ở lại — Casa Mika trải mình trên 1.400 mét vuông vườn, nhà kính và hiên có bóng mát.</p>
+                <p class="ms-body fade-up delay-2">Từ ly cà phê sớm lúc sáu rưỡi đến ly cocktail cuối trước nửa đêm, khu vườn giữ nhịp riêng của mình — theo mặt trời, theo mùa, và theo vị khách ngồi trước mặt chúng tôi.</p>
                 <ul class="ms-house-meta fade-up delay-3">
-                    <li><strong>1,400m²</strong><span>Garden &amp; glasshouse</span></li>
-                    <li><strong>06:30 – 23:30</strong><span>Open every day</span></li>
-                    <li><strong>Asian · Western</strong><span>A fusion in conversation</span></li>
+                    <li><strong>1.400m²</strong><span>Vườn &amp; nhà kính</span></li>
+                    <li><strong>06:30 – 23:30</strong><span>Mở cửa mỗi ngày</span></li>
+                    <li><strong>Á · Âu</strong><span>Một sự hòa quyện trong câu chuyện</span></li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- ===== Pull quote — quiet bridge ===== -->
-    <section class="ms-quote" aria-label="A note from the house">
+    <!-- ===== Pull quote ===== -->
+    <section class="ms-quote" aria-label="Lời nhắn từ ngôi nhà">
         <div class="container">
             <blockquote class="ms-quote-body fade-up">
-                <p>The house keeps its own hours.<br>Conversations linger.<br><em>Time stretches.</em></p>
+                <p>Ngôi nhà có nhịp giờ riêng.<br>Câu chuyện kéo dài.<br><em>Thời gian giãn ra.</em></p>
             </blockquote>
         </div>
     </section>
 
-    <!-- ===== A Day at Casa Mika ===== -->
+    <!-- ===== Một Ngày ở Casa Mika ===== -->
     <section class="ms-section ms-day" id="day">
         <div class="container center-text">
-            <span class="ms-eyebrow fade-up">— A Day at Casa Mika</span>
-            <h2 class="ms-title fade-up">Four moods.<br><em>One garden.</em></h2>
-            <p class="ms-section-sub fade-up delay-1">The light shifts. The soundtrack softens. The house follows the
-                sun.</p>
+            <span class="ms-eyebrow fade-up">— Một Ngày ở Casa Mika</span>
+            <h2 class="ms-title fade-up">Bốn tâm trạng.<br><em>Một khu vườn.</em></h2>
+            <p class="ms-section-sub fade-up delay-1">Ánh sáng đổi sắc. Âm thanh dịu lại. Ngôi nhà đi theo mặt trời.</p>
         </div>
         <div class="container ms-day-grid">
             <article class="ms-day-card fade-up">
                 <div class="ms-day-img">
                     <div class="ms-photo-frame" style="--ratio: 3 / 4;">
                         <span class="ms-photo-frame-tag">Photo brief · Morning</span>
-                        <span class="ms-photo-frame-desc">Hands lifting a Vietnamese drip coffee from a marble side-table. Soft 7am side-light through garden leaves, dappled shadow. Linen napkin, brass spoon. Mood: hushed, unhurried.</span>
+                        <span class="ms-photo-frame-desc">Hands lifting a Vietnamese drip coffee from a marble side-table.</span>
                         <span class="ms-photo-frame-ratio">3 : 4 portrait</span>
                     </div>
                 </div>
                 <span class="ms-day-time">06:30 — 10:30</span>
-                <h3 class="ms-day-name">Morning</h3>
-                <p class="ms-day-mood">First light through the canopy, the kitchen quietly opens, the garden tunes itself for the day ahead.</p>
+                <h3 class="ms-day-name">Bình Minh</h3>
+                <p class="ms-day-mood">Tia nắng đầu xuyên qua tán lá, gian bếp lặng lẽ mở cửa, khu vườn dần đánh thức mình cho ngày mới.</p>
             </article>
             <article class="ms-day-card fade-up delay-1">
                 <div class="ms-day-img">
                     <div class="ms-photo-frame" style="--ratio: 3 / 4;">
                         <span class="ms-photo-frame-tag">Photo brief · Noon</span>
-                        <span class="ms-photo-frame-desc">Overhead shot of a long lunch: a chilled white wine, a fresh seafood platter on ice, hands reaching across the table. Bright noon light filtered by green canopy — high contrast, summer Mediterranean feel.</span>
+                        <span class="ms-photo-frame-desc">Overhead shot of a long lunch with a chilled white wine and seafood platter.</span>
                         <span class="ms-photo-frame-ratio">3 : 4 portrait</span>
                     </div>
                 </div>
                 <span class="ms-day-time">11:30 — 14:30</span>
-                <h3 class="ms-day-name">Noon</h3>
-                <p class="ms-day-mood">Long lunches in dappled shade — Asian flavours meet Mediterranean light.</p>
+                <h3 class="ms-day-name">Trưa</h3>
+                <p class="ms-day-mood">Bữa trưa kéo dài dưới bóng lá đan — hương vị châu Á gặp ánh nắng Địa Trung Hải.</p>
             </article>
             <article class="ms-day-card fade-up delay-2">
                 <div class="ms-day-img">
                     <div class="ms-photo-frame" style="--ratio: 3 / 4;">
                         <span class="ms-photo-frame-tag">Photo brief · Evening</span>
-                        <span class="ms-photo-frame-desc">Close-up of Fuji beef searing on a hot volcanic stone, smoke catching candlelight. The chef's hands in soft focus behind. Dark background, deep amber and gold highlights. Tableside theatre.</span>
+                        <span class="ms-photo-frame-desc">Close-up of Fuji beef searing on a hot volcanic stone.</span>
                         <span class="ms-photo-frame-ratio">3 : 4 portrait</span>
                     </div>
                 </div>
                 <span class="ms-day-time">17:30 — 22:00</span>
-                <h3 class="ms-day-name">Evening</h3>
-                <p class="ms-day-mood">Fuji beef on hot stone, candlelight on glass — the garden turns to gold.</p>
+                <h3 class="ms-day-name">Chiều Tối</h3>
+                <p class="ms-day-mood">Bò Fuji trên đá nóng, ánh nến lấp lánh trên thủy tinh — khu vườn ngả sang sắc vàng.</p>
             </article>
             <article class="ms-day-card fade-up delay-3">
                 <div class="ms-day-img">
                     <div class="ms-photo-frame" style="--ratio: 3 / 4;">
                         <span class="ms-photo-frame-tag">Photo brief · Night</span>
-                        <span class="ms-photo-frame-desc">A signature cocktail in shallow depth-of-field, a sliver of garden light bouncing off the rim. The pianist's silhouette out of focus behind. Very low key, blacks and gold, single source light.</span>
+                        <span class="ms-photo-frame-desc">A signature cocktail in shallow depth-of-field.</span>
                         <span class="ms-photo-frame-ratio">3 : 4 portrait</span>
                     </div>
                 </div>
                 <span class="ms-day-time">21:00 — 23:30</span>
-                <h3 class="ms-day-name">Night</h3>
-                <p class="ms-day-mood">Signature cocktails, piano in the main hall, An Thượng nightlife in a single glass.</p>
+                <h3 class="ms-day-name">Đêm</h3>
+                <p class="ms-day-mood">Cocktail đặc trưng, tiếng piano vọng từ sảnh chính, đêm An Thượng gói gọn trong một ly.</p>
             </article>
         </div>
     </section>
@@ -210,252 +169,232 @@
     <!-- ===== Signature ===== -->
     <section class="ms-section ms-signature-section" id="signature">
         <div class="container center-text">
-            <span class="ms-eyebrow fade-up">— Signature</span>
-            <h2 class="ms-title fade-up">The dishes we<br><em>put our name on.</em></h2>
-            <p class="ms-section-sub fade-up delay-1">A short list. Each one composed for the garden, the hour, the
-                guest in front of us.</p>
+            <span class="ms-eyebrow fade-up">— Đặc Trưng</span>
+            <h2 class="ms-title fade-up">Những món mà chúng tôi<br><em>đặt tên mình lên.</em></h2>
+            <p class="ms-section-sub fade-up delay-1">Một danh sách ngắn. Mỗi món được dựng riêng cho khu vườn, cho giờ giấc, cho người khách trước mặt.</p>
         </div>
         <div class="container ms-signature-grid">
             <article class="ms-sig-card fade-up">
                 <div class="ms-sig-img">
                     <div class="ms-photo-frame" style="--ratio: 4 / 3;">
                         <span class="ms-photo-frame-tag">Photo brief · Seafood</span>
-                        <span class="ms-photo-frame-desc">Overhead, tightly cropped: oysters, raw prawns, citrus wedges on crushed ice on a dark slate platter. A bright lemon highlight, otherwise moody and cool. No props beyond a single silver pick.</span>
+                        <span class="ms-photo-frame-desc">Overhead, tightly cropped: oysters, raw prawns, citrus wedges on crushed ice.</span>
                         <span class="ms-photo-frame-ratio">4 : 3 landscape</span>
                     </div>
                 </div>
                 <div class="ms-sig-info">
-                    <span class="ms-sig-tag">Eastern</span>
+                    <span class="ms-sig-tag">Phương Đông</span>
                     <h3>Asian Seafood Platter</h3>
-                    <p>A coastal selection from Da Nang's morning markets, prepared with restraint.</p>
+                    <p>Tuyển chọn hải sản tươi từ những phiên chợ sớm Đà Nẵng, chế biến tinh giản.</p>
                 </div>
             </article>
             <article class="ms-sig-card fade-up delay-1">
                 <div class="ms-sig-img">
                     <div class="ms-photo-frame" style="--ratio: 4 / 3;">
                         <span class="ms-photo-frame-tag">Photo brief · Beef</span>
-                        <span class="ms-photo-frame-desc">Three-quarter angle of marbled Fuji beef searing on a glowing volcanic stone, smoke rising into a dark backdrop. Visible grain, butter melting, single warm key light. The hero shot — book the photographer's best hour for this.</span>
+                        <span class="ms-photo-frame-desc">Three-quarter angle of marbled Fuji beef searing on glowing volcanic stone.</span>
                         <span class="ms-photo-frame-ratio">4 : 3 landscape</span>
                     </div>
                 </div>
                 <div class="ms-sig-info">
-                    <span class="ms-sig-tag">Western</span>
+                    <span class="ms-sig-tag">Phương Tây</span>
                     <h3>Fuji Beef on Stone</h3>
-                    <p>Marbled tenderloin seared tableside on volcanic rock — the house signature, since day one.</p>
+                    <p>Thăn bò vân mỡ áp chảo ngay tại bàn trên đá nham thạch — chữ ký của ngôi nhà, từ ngày đầu.</p>
                 </div>
             </article>
             <article class="ms-sig-card fade-up delay-2">
                 <div class="ms-sig-img">
                     <div class="ms-photo-frame" style="--ratio: 4 / 3;">
                         <span class="ms-photo-frame-tag">Photo brief · Cocktail</span>
-                        <span class="ms-photo-frame-desc">A tall coupe glass with a smoky amber cocktail, single ice block, an orange-peel garnish. Backlit so steam/smoke is visible. Almost monochrome dark, only the drink glows.</span>
+                        <span class="ms-photo-frame-desc">A tall coupe glass with a smoky amber cocktail.</span>
                         <span class="ms-photo-frame-ratio">4 : 3 landscape</span>
                     </div>
                 </div>
                 <div class="ms-sig-info">
                     <span class="ms-sig-tag">Bar</span>
                     <h3>An Thượng Night</h3>
-                    <p>A cocktail composed for the garden after dark — bitter, smoke, citrus, in long shadow.</p>
+                    <p>Một ly cocktail dành riêng cho khu vườn sau hoàng hôn — đắng, khói, cam quýt, kéo dài bóng tối.</p>
                 </div>
             </article>
         </div>
         <div class="container center-text ms-signature-cta">
-            <p class="ms-menu-note fade-up">Full menu available on request — <a href="tel:+84708888007">please call</a>.</p>
+            <p class="ms-menu-note fade-up">Thực đơn đầy đủ theo yêu cầu — <a href="tel:+84708888007">vui lòng gọi</a>.</p>
         </div>
     </section>
 
-    <!-- ===== Atmosphere & Private Events ===== -->
+    <!-- ===== Không Gian & Sự Kiện Riêng ===== -->
     <section class="ms-section ms-atmos" id="atmosphere">
         <div class="container center-text">
-            <span class="ms-eyebrow fade-up">— Atmosphere</span>
-            <h2 class="ms-title fade-up">Two quiet thefts<br><em>of attention.</em></h2>
-            <p class="ms-section-sub fade-up delay-1">A wall that breathes. A piano that listens. Built into the
-                architecture of the house, not added to it.</p>
+            <span class="ms-eyebrow fade-up">— Không Gian</span>
+            <h2 class="ms-title fade-up">Hai điều âm thầm<br><em>lấy đi sự chú ý.</em></h2>
+            <p class="ms-section-sub fade-up delay-1">Một bức tường biết thở. Một cây đàn biết lắng nghe. Được dựng trong kiến trúc của ngôi nhà, không phải thêm vào.</p>
         </div>
         <div class="container ms-atmos-grid">
             <article class="ms-atmos-card fade-up">
                 <div class="ms-atmos-img">
                     <div class="ms-photo-frame" style="--ratio: 4 / 5;">
                         <span class="ms-photo-frame-tag">Photo brief · Fish-tank wall</span>
-                        <span class="ms-photo-frame-desc">A recessed wall aquarium running the length of the main dining
-                            room. Blue-green light spilling onto the floor, silhouette of a guest seated in foreground.
-                            Long exposure to soften the water. Cinematic, dark surroundings.</span>
+                        <span class="ms-photo-frame-desc">A recessed wall aquarium running the length of the main dining room.</span>
                         <span class="ms-photo-frame-ratio">4 : 5 portrait</span>
                     </div>
                 </div>
-                <span class="ms-atmos-tag">In the main hall</span>
-                <h3 class="ms-atmos-name">The Fish-Tank Wall</h3>
-                <p class="ms-atmos-desc">A recessed aquarium running the length of the main dining room — the slow
-                    movement of water as ambient theatre, the room's quiet metronome.</p>
+                <span class="ms-atmos-tag">Tại sảnh chính</span>
+                <h3 class="ms-atmos-name">Bức Tường Bể Cá</h3>
+                <p class="ms-atmos-desc">Một bể cá âm tường chạy dọc theo phòng ăn chính — chuyển động chậm rãi của nước như một sân khấu mờ ảo, nhịp đập trầm lặng của căn phòng.</p>
             </article>
             <article class="ms-atmos-card fade-up delay-1">
                 <div class="ms-atmos-img">
                     <div class="ms-photo-frame" style="--ratio: 4 / 5;">
                         <span class="ms-photo-frame-tag">Photo brief · Live piano</span>
-                        <span class="ms-photo-frame-desc">Pianist mid-performance at a grand piano in the lobby/main
-                            hall. Shot from behind the player, looking past the keys toward the dining room. Warm
-                            spotlight on the hands. Evening, low ambient light, no flash.</span>
+                        <span class="ms-photo-frame-desc">Pianist mid-performance at a grand piano in the main hall.</span>
                         <span class="ms-photo-frame-ratio">4 : 5 portrait</span>
                     </div>
                 </div>
-                <span class="ms-atmos-tag">From the lobby</span>
-                <h3 class="ms-atmos-name">A Pianist, Each Evening</h3>
-                <p class="ms-atmos-desc">A live grand piano in the main hall every night from seven — chosen for the
-                    room, not the stage. Conversation stays the loudest sound at the table.</p>
+                <span class="ms-atmos-tag">Từ sảnh đón</span>
+                <h3 class="ms-atmos-name">Mỗi Tối, Một Nghệ Sĩ Piano</h3>
+                <p class="ms-atmos-desc">Một cây đại dương cầm chơi trực tiếp tại sảnh chính mỗi đêm từ bảy giờ — được chọn cho không gian, không phải sân khấu. Tiếng trò chuyện vẫn là âm thanh lớn nhất trên bàn.</p>
             </article>
         </div>
         <div class="container ms-atmos-events fade-up delay-2">
             <div class="ms-atmos-events-text">
-                <span class="ms-eyebrow">— Private Events</span>
-                <h3 class="ms-atmos-events-title">A 1,400m² garden, <em>set for your evening.</em></h3>
-                <p>Weddings, milestone birthdays, corporate dinners, brand launches. The glasshouse seats 60. The
-                    terrace, 120. The full garden, up to 300. Tailored menus from the kitchen, sommelier on request,
-                    discreet service throughout.</p>
+                <span class="ms-eyebrow">— Sự Kiện Riêng</span>
+                <h3 class="ms-atmos-events-title">1.400m² khu vườn, <em>được dựng cho buổi tối của bạn.</em></h3>
+                <p>Đám cưới, sinh nhật trọng đại, tiệc tối doanh nghiệp, ra mắt thương hiệu. Nhà kính 60 chỗ. Hiên ngồi 120. Toàn vườn tới 300. Thực đơn đặt riêng từ gian bếp, sommelier theo yêu cầu, dịch vụ kín đáo xuyên suốt.</p>
             </div>
             <div class="ms-atmos-events-cta">
                 <a href="https://zalo.me/0706024684" target="_blank" rel="noopener"
-                    class="ms-btn ms-btn-primary ms-btn-lg">Plan an Event on Zalo</a>
-                <a href="tel:+84708888007" class="ms-atmos-events-tel">or call +84 708 888 007</a>
+                    class="ms-btn ms-btn-primary ms-btn-lg">Lên Kế Hoạch Qua Zalo</a>
+                <a href="tel:+84708888007" class="ms-atmos-events-tel">hoặc gọi +84 708 888 007</a>
             </div>
         </div>
     </section>
 
-    <!-- ===== Gallery ===== -->
+    <!-- ===== Hình Ảnh ===== -->
     <section class="ms-section ms-gallery-section" id="gallery">
         <div class="container center-text">
-            <span class="ms-eyebrow fade-up">— Gallery</span>
-            <h2 class="ms-title fade-up">Inside <em>the house.</em></h2>
+            <span class="ms-eyebrow fade-up">— Hình Ảnh</span>
+            <h2 class="ms-title fade-up">Bên trong <em>ngôi nhà.</em></h2>
         </div>
         <div class="container ms-gallery">
             <div class="ms-gal-item ms-gal-tall fade-up">
                 <div class="ms-photo-frame" style="--ratio: 3 / 4;">
                     <span class="ms-photo-frame-tag">Gallery · Garden</span>
-                    <span class="ms-photo-frame-desc">Vertical drone or ladder shot of the garden + glasshouse from above, golden hour. Should feel like an aerial portrait. The signature hero shot of the property.</span>
+                    <span class="ms-photo-frame-desc">Vertical drone shot of the garden + glasshouse from above, golden hour.</span>
                     <span class="ms-photo-frame-ratio">3 : 4 portrait · tall</span>
                 </div>
-                <span class="ms-gal-caption">The garden, at first light</span>
+                <span class="ms-gal-caption">Khu vườn, khi nắng vừa lên</span>
             </div>
             <div class="ms-gal-item fade-up delay-1">
                 <div class="ms-photo-frame" style="--ratio: 4 / 3;">
                     <span class="ms-photo-frame-tag">Gallery · Long table</span>
-                    <span class="ms-photo-frame-desc">Long communal table set for service — linen, glassware in a row, candle flames. Looking down the length of the table, focal point at the far end.</span>
+                    <span class="ms-photo-frame-desc">Long communal table set for service.</span>
                     <span class="ms-photo-frame-ratio">4 : 3 landscape</span>
                 </div>
-                <span class="ms-gal-caption">The long table</span>
+                <span class="ms-gal-caption">Chiếc bàn dài</span>
             </div>
             <div class="ms-gal-item fade-up delay-2">
                 <div class="ms-photo-frame" style="--ratio: 4 / 3;">
                     <span class="ms-photo-frame-tag">Gallery · Glasshouse</span>
-                    <span class="ms-photo-frame-desc">Interior of the glasshouse mid-afternoon — sunlight through panels, plants, one empty table. Architectural feeling, no people. Warm green-gold palette.</span>
+                    <span class="ms-photo-frame-desc">Interior of the glasshouse mid-afternoon.</span>
                     <span class="ms-photo-frame-ratio">4 : 3 landscape</span>
                 </div>
-                <span class="ms-gal-caption">Glasshouse afternoon</span>
+                <span class="ms-gal-caption">Nhà kính buổi chiều</span>
             </div>
             <div class="ms-gal-item fade-up delay-3">
                 <div class="ms-photo-frame" style="--ratio: 4 / 3;">
                     <span class="ms-photo-frame-tag">Gallery · Terrace</span>
-                    <span class="ms-photo-frame-desc">Shaded terrace at dusk, lanterns on. Two empty chairs and a low table, garden beyond. Mood: invitation, intimacy.</span>
+                    <span class="ms-photo-frame-desc">Shaded terrace at dusk, lanterns on.</span>
                     <span class="ms-photo-frame-ratio">4 : 3 landscape</span>
                 </div>
-                <span class="ms-gal-caption">Terrace, into the evening</span>
+                <span class="ms-gal-caption">Hiên nhà, vào lúc chiều buông</span>
             </div>
         </div>
     </section>
 
-    <!-- ===== Voices (social proof) =====
-         NOTE: ratings and testimonials below are PLACEHOLDERS for layout review.
-         Replace with real TripAdvisor/Google data and verified guest quotes
-         before going to production. -->
+    <!-- ===== Lời Khách (social proof — placeholder) ===== -->
     <section class="ms-section ms-voices" id="voices">
         <div class="container center-text">
-            <span class="ms-eyebrow fade-up">— Voices</span>
-            <h2 class="ms-title fade-up">Quiet praise,<br><em>slowly earned.</em></h2>
+            <span class="ms-eyebrow fade-up">— Lời Khách</span>
+            <h2 class="ms-title fade-up">Lời khen lặng lẽ,<br><em>được xây bằng thời gian.</em></h2>
         </div>
         <div class="container ms-voices-ratings fade-up delay-1">
             <div class="ms-rating">
                 <span class="ms-rating-stars" aria-hidden="true">★★★★★</span>
                 <span class="ms-rating-score">4.8</span>
-                <span class="ms-rating-meta">TripAdvisor · 1,240+ reviews</span>
+                <span class="ms-rating-meta">TripAdvisor · 1.240+ đánh giá</span>
             </div>
             <div class="ms-rating">
                 <span class="ms-rating-stars" aria-hidden="true">★★★★★</span>
                 <span class="ms-rating-score">4.7</span>
-                <span class="ms-rating-meta">Google · 980+ reviews</span>
+                <span class="ms-rating-meta">Google · 980+ đánh giá</span>
             </div>
             <div class="ms-rating">
                 <span class="ms-rating-stars" aria-hidden="true">★★★★★</span>
                 <span class="ms-rating-score">9.4</span>
-                <span class="ms-rating-meta">Klook · Top 1% restaurants</span>
+                <span class="ms-rating-meta">Klook · Top 1% nhà hàng</span>
             </div>
         </div>
         <div class="container ms-voices-grid">
             <blockquote class="ms-voice fade-up">
-                <p>"We came back three nights in a row. By the second night the staff knew our wine, by the third they
-                    knew our story. That doesn't happen often anymore."</p>
+                <p>"Chúng tôi quay lại ba tối liên tiếp. Đến tối thứ hai nhân viên đã biết loại rượu của chúng tôi, đến tối thứ ba họ biết cả câu chuyện. Hiếm nơi nào làm được vậy bây giờ."</p>
                 <footer>— K. T., Hong Kong</footer>
             </blockquote>
             <blockquote class="ms-voice fade-up delay-1">
-                <p>"The beef on stone is theatre — but it's the garden between courses we remember. We sat for four
-                    hours and felt like we'd booked the place out."</p>
+                <p>"Bò trên đá là sân khấu — nhưng khu vườn giữa các món mới là điều chúng tôi nhớ. Chúng tôi ngồi bốn tiếng, cảm giác như đặt riêng cả nhà hàng."</p>
                 <footer>— M. R., Sydney</footer>
             </blockquote>
             <blockquote class="ms-voice fade-up delay-2">
-                <p>"A rare quiet in the middle of An Thượng. The pianist played something I half-recognised. My partner
-                    said yes before dessert."</p>
+                <p>"Một khoảng lặng hiếm giữa An Thượng. Nghệ sĩ piano chơi một giai điệu tôi như đã từng nghe. Người yêu tôi gật đầu trước cả khi tráng miệng."</p>
                 <footer>— J. L., Singapore</footer>
             </blockquote>
         </div>
     </section>
 
-    <!-- ===== Instagram feed =====
-         NOTE: tiles below are placeholders. When the @casamika.official feed
-         goes live, replace with a Lightwidget / Curator.io / Instagram Basic
-         Display API embed, or hand-pick the 6 most recent grid images. -->
+    <!-- ===== Instagram ===== -->
     <section class="ms-section ms-insta" id="insta">
         <div class="container center-text">
-            <span class="ms-eyebrow fade-up">— Follow the garden</span>
+            <span class="ms-eyebrow fade-up">— Theo dõi khu vườn</span>
             <h2 class="ms-title fade-up"><em>@casamika.official</em></h2>
-            <p class="ms-section-sub fade-up delay-1">A slower scroll. One frame a day, mostly the kitchen, sometimes the
-                garden, occasionally the cat.</p>
+            <p class="ms-section-sub fade-up delay-1">Một cuộn chậm rãi. Mỗi ngày một khung hình, phần lớn là bếp, đôi khi là vườn, thi thoảng là chú mèo.</p>
         </div>
         <div class="container ms-insta-grid">
             <a class="ms-insta-tile fade-up" href="https://www.instagram.com/casamika.official/" target="_blank"
-                rel="noopener" aria-label="See on Instagram">
+                rel="noopener" aria-label="Xem trên Instagram">
                 <div class="ms-photo-frame" style="--ratio: 1 / 1;">
                     <span class="ms-photo-frame-tag">IG · 01</span>
-                    <span class="ms-photo-frame-desc">Hands plating the Fuji beef tartare from above. Square.</span>
+                    <span class="ms-photo-frame-desc">Hands plating the Fuji beef tartare.</span>
                 </div>
             </a>
             <a class="ms-insta-tile fade-up delay-1" href="https://www.instagram.com/casamika.official/" target="_blank"
-                rel="noopener" aria-label="See on Instagram">
+                rel="noopener" aria-label="Xem trên Instagram">
                 <div class="ms-photo-frame" style="--ratio: 1 / 1;">
                     <span class="ms-photo-frame-tag">IG · 02</span>
-                    <span class="ms-photo-frame-desc">Garden at first light — empty terrace, dew.</span>
+                    <span class="ms-photo-frame-desc">Garden at first light.</span>
                 </div>
             </a>
             <a class="ms-insta-tile fade-up delay-2" href="https://www.instagram.com/casamika.official/" target="_blank"
-                rel="noopener" aria-label="See on Instagram">
+                rel="noopener" aria-label="Xem trên Instagram">
                 <div class="ms-photo-frame" style="--ratio: 1 / 1;">
                     <span class="ms-photo-frame-tag">IG · 03</span>
-                    <span class="ms-photo-frame-desc">Cocktail close-up, smoke catching gold light.</span>
+                    <span class="ms-photo-frame-desc">Cocktail close-up.</span>
                 </div>
             </a>
             <a class="ms-insta-tile fade-up" href="https://www.instagram.com/casamika.official/" target="_blank"
-                rel="noopener" aria-label="See on Instagram">
+                rel="noopener" aria-label="Xem trên Instagram">
                 <div class="ms-photo-frame" style="--ratio: 1 / 1;">
                     <span class="ms-photo-frame-tag">IG · 04</span>
                     <span class="ms-photo-frame-desc">Sommelier pouring at the long table.</span>
                 </div>
             </a>
             <a class="ms-insta-tile fade-up delay-1" href="https://www.instagram.com/casamika.official/" target="_blank"
-                rel="noopener" aria-label="See on Instagram">
+                rel="noopener" aria-label="Xem trên Instagram">
                 <div class="ms-photo-frame" style="--ratio: 1 / 1;">
                     <span class="ms-photo-frame-tag">IG · 05</span>
-                    <span class="ms-photo-frame-desc">Pianist's hands on the keys — black &amp; white.</span>
+                    <span class="ms-photo-frame-desc">Pianist's hands on the keys.</span>
                 </div>
             </a>
             <a class="ms-insta-tile fade-up delay-2" href="https://www.instagram.com/casamika.official/" target="_blank"
-                rel="noopener" aria-label="See on Instagram">
+                rel="noopener" aria-label="Xem trên Instagram">
                 <div class="ms-photo-frame" style="--ratio: 1 / 1;">
                     <span class="ms-photo-frame-tag">IG · 06</span>
                     <span class="ms-photo-frame-desc">Garden cat asleep on a wicker chair.</span>
@@ -464,27 +403,25 @@
         </div>
         <div class="container center-text ms-insta-cta">
             <a href="https://www.instagram.com/casamika.official/" target="_blank" rel="noopener"
-                class="ms-btn ms-btn-outline">Follow on Instagram</a>
+                class="ms-btn ms-btn-outline">Theo dõi trên Instagram</a>
         </div>
     </section>
 
-    <!-- ===== Reserve ===== -->
+    <!-- ===== Đặt Bàn ===== -->
     <section class="ms-section ms-reserve" id="reserve">
         <div class="container ms-reserve-grid">
             <div class="ms-reserve-text">
-                <span class="ms-eyebrow fade-up">— Reserve</span>
-                <h2 class="ms-title fade-up">Save a seat<br><em>at the garden table.</em></h2>
-                <p class="ms-body fade-up delay-1">Open daily, 06:30 – 23:30. We recommend reserving in advance for
-                    dinner and weekends — <strong>Zalo is the fastest way to reach the host stand.</strong> Walk-ins welcome
-                    whenever the kitchen is on.</p>
+                <span class="ms-eyebrow fade-up">— Đặt Bàn</span>
+                <h2 class="ms-title fade-up">Giữ một chỗ<br><em>bên chiếc bàn vườn.</em></h2>
+                <p class="ms-body fade-up delay-1">Mở cửa hàng ngày, 06:30 – 23:30. Khuyến khích đặt trước cho bữa tối và cuối tuần — <strong>Zalo là cách nhanh nhất để gặp lễ tân.</strong> Khách lỡ ghé vẫn được chào đón bất kỳ khi nào gian bếp còn lửa.</p>
                 <dl class="ms-reserve-meta fade-up delay-2">
                     <div>
-                        <dt>Address</dt>
-                        <dd>37 Trần Bạch Đằng, An Thượng<br>Ngũ Hành Sơn, Da Nang</dd>
+                        <dt>Địa chỉ</dt>
+                        <dd>37 Trần Bạch Đằng, An Thượng<br>Ngũ Hành Sơn, Đà Nẵng</dd>
                     </div>
                     <div>
-                        <dt>Hours</dt>
-                        <dd>Every day · 06:30 – 23:30</dd>
+                        <dt>Giờ mở cửa</dt>
+                        <dd>Mỗi ngày · 06:30 – 23:30</dd>
                     </div>
                 </dl>
             </div>
@@ -499,7 +436,7 @@
                         </svg>
                     </span>
                     <div class="ms-contact-text">
-                        <span class="ms-contact-label">Reserve via Zalo · Fastest reply</span>
+                        <span class="ms-contact-label">Đặt bàn qua Zalo · Trả lời nhanh nhất</span>
                         <span class="ms-contact-value">+84 706 024 684</span>
                     </div>
                 </a>
@@ -512,7 +449,7 @@
                         </svg>
                     </span>
                     <div class="ms-contact-text">
-                        <span class="ms-contact-label">Call the host stand</span>
+                        <span class="ms-contact-label">Gọi lễ tân</span>
                         <span class="ms-contact-value">+84 708 888 007</span>
                     </div>
                 </a>
@@ -526,8 +463,8 @@
                         </svg>
                     </span>
                     <div class="ms-contact-text">
-                        <span class="ms-contact-label">Get Directions</span>
-                        <span class="ms-contact-value">Open in Google Maps</span>
+                        <span class="ms-contact-label">Chỉ đường</span>
+                        <span class="ms-contact-value">Mở trên Google Maps</span>
                     </div>
                 </a>
             </div>
@@ -535,7 +472,7 @@
         <div class="container ms-map-wrap fade-in">
             <iframe
                 src="https://maps.google.com/maps?q=37%20Tr%E1%BA%A7n%20B%E1%BA%A1ch%20%C4%90%E1%BA%B1ng%2C%20An%20Th%C6%B0%E1%BB%A3ng%2C%20Da%20Nang&t=&z=17&ie=UTF8&iwloc=&output=embed"
-                title="Casa Mika location on Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                title="Vị trí Casa Mika trên Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
                 allowfullscreen></iframe>
         </div>
     </section>
@@ -546,31 +483,31 @@
             <div class="ms-footer-brand">
                 <img src="/image/logo.png" alt="Casa Mika"
                     onerror="this.outerHTML='<span class=&quot;ms-footer-logo-text&quot;>CASA MIKA</span>';">
-                <p>A garden table in An Thượng.</p>
+                <p>Một bàn vườn ở An Thượng.</p>
             </div>
             <div class="ms-footer-col">
-                <h4>Visit</h4>
-                <p>37 Trần Bạch Đằng<br>An Thượng · Ngũ Hành Sơn<br>Da Nang, Vietnam</p>
-                <p>Open daily · 06:00 – 23:30</p>
+                <h4>Đến với chúng tôi</h4>
+                <p>37 Trần Bạch Đằng<br>An Thượng · Ngũ Hành Sơn<br>Đà Nẵng, Việt Nam</p>
+                <p>Mở cửa hàng ngày · 06:00 – 23:30</p>
             </div>
             <div class="ms-footer-col">
-                <h4>Contact</h4>
+                <h4>Liên hệ</h4>
                 <p><a href="tel:+84708888007">+84 708 888 007</a></p>
                 <p><a href="https://zalo.me/0706024684" target="_blank" rel="noopener">Zalo · +84 706 024 684</a></p>
                 <p><a href="mailto:info@casamika.com">info@casamika.com</a></p>
             </div>
             <div class="ms-footer-col">
-                <h4>Follow</h4>
+                <h4>Theo dõi</h4>
                 <div class="ms-footer-social">
                     <a href="https://www.facebook.com/official.casamika" target="_blank" rel="noopener"
-                        aria-label="Casa Mika on Facebook">
+                        aria-label="Casa Mika trên Facebook">
                         <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
                             <path
                                 d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z" />
                         </svg>
                     </a>
                     <a href="https://www.instagram.com/casamika.official/" target="_blank" rel="noopener"
-                        aria-label="Casa Mika on Instagram">
+                        aria-label="Casa Mika trên Instagram">
                         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
                             stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                             <rect x="3" y="3" width="18" height="18" rx="5" ry="5" />
@@ -583,23 +520,23 @@
         </div>
         <div class="ms-footer-bottom">
             <div class="container ms-footer-bottom-inner">
-                <p>&copy; 2026 Casa Mika. All rights reserved.</p>
-                <a href="/doi-tac.html" class="ms-partner-link">For tour operators &amp; partners → Vietnamese B2B page
+                <p>&copy; 2026 Casa Mika. Mọi quyền được bảo lưu.</p>
+                <a href="/doi-tac.html" class="ms-partner-link">Dành cho tour operator &amp; đối tác → Trang B2B
                     →</a>
             </div>
         </div>
     </footer>
 
-    <!-- Sticky Reserve CTA (mobile-friendly) -->
-    <a href="#reserve" class="ms-sticky-cta" id="msStickyCta" aria-label="Reserve a table">
-        <span>Reserve</span>
+    <!-- Sticky Reserve CTA -->
+    <a href="#reserve" class="ms-sticky-cta" id="msStickyCta" aria-label="Đặt bàn">
+        <span>Đặt Bàn</span>
     </a>
 
     <!-- Lightbox -->
-    <div class="ms-lightbox" id="msLightbox" aria-hidden="true" role="dialog" aria-label="Image viewer">
-        <button class="ms-lightbox-close" id="msLightboxClose" aria-label="Close">&times;</button>
-        <button class="ms-lightbox-prev" id="msLightboxPrev" aria-label="Previous image">&#8249;</button>
-        <button class="ms-lightbox-next" id="msLightboxNext" aria-label="Next image">&#8250;</button>
+    <div class="ms-lightbox" id="msLightbox" aria-hidden="true" role="dialog" aria-label="Xem ảnh">
+        <button class="ms-lightbox-close" id="msLightboxClose" aria-label="Đóng">&times;</button>
+        <button class="ms-lightbox-prev" id="msLightboxPrev" aria-label="Ảnh trước">&#8249;</button>
+        <button class="ms-lightbox-next" id="msLightboxNext" aria-label="Ảnh sau">&#8250;</button>
         <img class="ms-lightbox-img" id="msLightboxImg" alt="">
     </div>
 
