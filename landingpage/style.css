@@ -1839,6 +1839,8 @@ a {
 }
 .ms-nav-link:hover { color: #B8912A; }
 .ms-nav-link:hover::after { right: 0; }
+.ms-nav-link.is-active { color: #B8912A; }
+.ms-nav-link.is-active::after { right: 0; }
 
 /* Language switcher (VI | EN | DE) — top-right of header, always visible */
 .ms-lang-switch {
@@ -2020,7 +2022,10 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  animation: msKenBurns 22s ease-in-out infinite alternate;
+  transform-origin: center 30%;
+  animation:
+    msHeroPullBack 5.2s cubic-bezier(0.22, 1, 0.36, 1) both,
+    msKenBurns 22s ease-in-out 5.2s infinite alternate;
   will-change: transform;
 }
 .ms-hero-overlay {
@@ -2028,6 +2033,33 @@ a {
   inset: 0;
   background:
     linear-gradient(180deg, rgba(26,20,16,0.28) 0%, rgba(26,20,16,0.18) 40%, rgba(26,20,16,0.78) 100%);
+  /* Gentle overlay fade — subtle parallax illusion alongside the pull-back */
+  animation: msHeroOverlayFade 3.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes msHeroPullBack {
+  /* Cinematic pull-back: opens close on the building's upper third,
+     drifts slightly while drone-style backing out to full establishing shot. */
+  0% {
+    transform: scale(2.4) translate(-1.5%, 8%);
+    filter: brightness(0.78) contrast(1.05);
+  }
+  40% {
+    transform: scale(1.85) translate(1.5%, 4%);
+    filter: brightness(0.86) contrast(1.03);
+  }
+  75% {
+    transform: scale(1.28) translate(-0.5%, 1%);
+    filter: brightness(0.94) contrast(1.01);
+  }
+  100% {
+    transform: scale(1) translate(0, 0);
+    filter: brightness(1) contrast(1);
+  }
+}
+@keyframes msHeroOverlayFade {
+  /* Heavier vignette at the start (focus on the close-up), softens into final overlay. */
+  0%   { background: linear-gradient(180deg, rgba(26,20,16,0.55) 0%, rgba(26,20,16,0.32) 45%, rgba(26,20,16,0.88) 100%); }
+  100% { background: linear-gradient(180deg, rgba(26,20,16,0.28) 0%, rgba(26,20,16,0.18) 40%, rgba(26,20,16,0.78) 100%); }
 }
 @keyframes msKenBurns {
   0%   { transform: scale(1)    translate(0, 0); }
@@ -2072,6 +2104,18 @@ a {
 }
 @media (min-width: 480px) {
   .ms-hero-actions { flex-direction: row; flex-wrap: wrap; gap: 1.1rem; }
+}
+
+/* Hero stub-note — for placeholder pages (About / Menu / News / Career) */
+.ms-hero-stub-note {
+  margin-top: 1.4rem;
+  margin-bottom: 2rem;
+  max-width: 560px;
+  font-family: var(--font-text);
+  font-size: clamp(0.95rem, 1.7vw, 1.05rem);
+  line-height: 1.65;
+  color: rgba(250, 247, 242, 0.82);
+  font-weight: 300;
 }
 
 /* ---------- Photo-frame placeholder (for sections awaiting commissioned photos) ----------
@@ -3104,6 +3148,7 @@ a {
   .site-main .fade-up,
   .site-main .fade-in { transition-duration: 0.2s; transform: none !important; }
   .ms-hero-image { animation: none; }
+  .ms-hero-overlay { animation: none; }
   .ms-hero-scroll-line { animation: none; }
   .ms-day-card:hover .ms-day-img img,
   .ms-sig-card:hover .ms-sig-img img,

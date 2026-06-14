@@ -1,17 +1,21 @@
 # Casa Mika — Landing Pages
 
-Site có **4 trang HTML** chạy chung style.css + script.js:
+Site có **8 trang HTML** chạy chung style.css + script.js:
 
-| URL | File | Audience | Ngôn ngữ | Mục đích |
+| URL | File | Audience | Ngôn ngữ | Trạng thái |
 |---|---|---|---|---|
-| `/` | **`index.html`** | Khách lẻ (chính, mặc định) | **English** | Luxury B2C, đặt bàn |
-| `/vi/` | **`vi/index.html`** | Khách lẻ VN | **Tiếng Việt** | Luxury B2C, đặt bàn |
-| `/de/` | **`de/index.html`** | Khách lẻ DE | **Deutsch** | Luxury B2C, đặt bàn |
-| `/doi-tac.html` | **`doi-tac.html`** | Đối tác (HDV, tài xế, tour) | Tiếng Việt | B2B partnership (commission) |
+| `/` | `index.html` | Khách lẻ EN (default) | English | ✅ Production-ready |
+| `/vi/` | `vi/index.html` | Khách lẻ VN | Tiếng Việt | ✅ Production-ready |
+| `/de/` | `de/index.html` | Khách lẻ DE | Deutsch | ✅ Production-ready |
+| `/about/` | `about/index.html` | Brand story | English | 🚧 Stub (Coming soon) |
+| `/menu/` | `menu/index.html` | Menu page | English | 🚧 Stub (Coming soon) |
+| `/news/` | `news/index.html` | Press / blog | English | 🚧 Stub (Coming soon) |
+| `/career/` | `career/index.html` | Tuyển dụng | English | 🚧 Stub (Coming soon) |
+| `/doi-tac.html` | `doi-tac.html` | Đối tác B2B | Tiếng Việt | ✅ Production-ready |
 
 Stack: HTML/CSS/JS thuần, **không build step**. Deploy Vercel (push main branch → auto).
 
-**Path convention (quan trọng):** 3 trang B2C (`/`, `/vi/`, `/de/`) dùng **root-absolute paths** (`/image/...`, `/style.css`, `/script.js`, `/doi-tac.html`) để code đồng nhất bất kể nested level. `doi-tac.html` vẫn dùng relative (`image/...`) — không đổi.
+**Path convention (quan trọng):** mọi trang B2C dùng **root-absolute paths** (`/image/...`, `/style.css`, `/script.js`, `/doi-tac.html`) để code đồng nhất bất kể nested level. `doi-tac.html` vẫn dùng relative (`image/...`) — không đổi.
 
 ---
 
@@ -20,10 +24,12 @@ Stack: HTML/CSS/JS thuần, **không build step**. Deploy Vercel (push main bran
 ```
 landingpage/
 ├── index.html        # B2C EN — entry mặc định, có auto-redirect tới /vi/ hoặc /de/
-├── vi/
-│   └── index.html    # B2C Tiếng Việt
-├── de/
-│   └── index.html    # B2C Deutsch
+├── vi/index.html     # B2C Tiếng Việt
+├── de/index.html     # B2C Deutsch
+├── about/index.html  # Stub — About (chờ Phase 2 content)
+├── menu/index.html   # Stub — Menu (chờ Phase 3 content)
+├── news/index.html   # Stub — News (chờ Phase 4 content + article subpages)
+├── career/index.html # Stub — Career (chờ Phase 5 content)
 ├── doi-tac.html      # B2B VN partner (có back-link sang index)
 ├── style.css         # 1 file chung — phần MAIN SITE đánh dấu bằng banner comment
 ├── script.js         # 1 file chung — đều dùng null-check để chạy được trên mọi trang
@@ -47,6 +53,39 @@ landingpage/
     ├── 3fa202a4...jpg        # Asset chờ wire vào index "Morning"
     └── email-signature.jpg   # Chữ ký email (asset thương hiệu, chưa dùng trong web)
 ```
+
+---
+
+## Nav structure (đã restructure Phase 1)
+
+Nav links trên 3 trang B2C (`/`, `/vi/`, `/de/`) point sang **4 trang riêng** + Reserve button (anchor `#reserve` trên homepage):
+
+```
+EN:  About    Menu    News    Career    [Reserve btn]   →   /about/  /menu/  /news/  /career/  /#reserve
+VI:  Về Chúng Tôi   Thực Đơn   Tin Tức   Tuyển Dụng   [Đặt Bàn]   →   (same URLs, tạm)
+DE:  Über uns   Speisekarte   News   Karriere   [Reservieren]      →   (same URLs, tạm)
+```
+
+**State quản lý:** mỗi page nav-link tự gắn `class="ms-nav-link is-active" aria-current="page"` để CSS bôi gold + underline. Style ở `style.css` (block `.ms-nav-link.is-active`).
+
+**Sections cũ trên homepage** (`#house`, `#signature`, `#atmosphere`, `#gallery`) vẫn tồn tại nguyên — chỉ KHÔNG còn link từ nav. User vào homepage scroll vẫn thấy đầy đủ. Phase 2+ có thể move content sang dedicated pages, nhưng theo quyết định hiện tại thì giữ.
+
+**VI/DE i18n tạm:** `/vi/index.html` và `/de/index.html` show label tiếng Việt/Đức nhưng URL vẫn point về `/about/`, `/menu/`, etc. (English). Phase 6 sẽ tạo `/vi/about/`, `/de/about/` etc. và update href.
+
+---
+
+## Roadmap
+
+| Phase | Việc | Status |
+|---|---|---|
+| 0 | Plan + decisions | ✅ Done |
+| **1** | **Nav restructure (About/Menu/News/Career) + 4 EN stub pages** | **✅ Done** |
+| 2 | Build About page (brand story, team, atmosphere details, garden tour) | ⏳ Next |
+| 3 | Build Menu page (signature dishes, menu sections, wine, dietary, PDF) | ⏳ |
+| 4 | Build News page index + first articles (mỗi article 1 sub-page riêng) | ⏳ |
+| 5 | Build Career page (culture, generic "Send CV" — chưa có vacancies) | ⏳ |
+| 6 | Dịch VI + DE cho 4 trang mới, update nav href sang `/vi/about/`, `/de/about/` etc. | ⏳ |
+| 7 | SEO polish: sitemap.xml, hreflang inter-page, robots.txt | ⏳ |
 
 ---
 

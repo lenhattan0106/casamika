@@ -48,7 +48,28 @@
       "Bash(/usr/bin/grep -oE '\\(src|href\\)=\"[^\"]*\\\\.\\(jpg|png|svg\\)\"' index.html)",
       "Bash(/usr/bin/sort -u)",
       "Bash(/usr/bin/grep -oE 'src=\"[^\"]*\\\\.\\(jpg|png\\)\"' doi-tac.html)",
-      "Bash(/usr/bin/file image/logo.png)"
+      "Bash(/usr/bin/file image/logo.png)",
+      "Bash(/usr/bin/grep -n \"ms-logo img\" \"/Users/buiquocvuong/Projects/DATN/Casa Mika/landingpage/style.css\")",
+      "Bash(/usr/bin/grep -E '\\(src|href\\)=\"[^\"]*\\\\.\\(png|jpg\\)\"' \"/Users/buiquocvuong/Projects/DATN/Casa Mika/landingpage/index.html\")",
+      "Bash(/usr/bin/grep -c \"ms-lang-switch\" \"/Users/buiquocvuong/Projects/DATN/Casa Mika/landingpage/index.html\")",
+      "Bash(/usr/bin/curl -s http://localhost:8000/)",
+      "Bash(/usr/bin/grep -oE '\\(src|href\\)=\"[^\"]*\\\\.\\(png|jpg|css|js\\)\"')",
+      "Bash(/usr/bin/curl -s http://localhost:8000/style.css)",
+      "Bash(/usr/bin/grep -n \"ms-logo img\")",
+      "Bash(/usr/bin/grep -c \"ms-lang-switch\")",
+      "Bash(/usr/bin/curl -s -o /dev/null -w \"vi/  → %{http_code}\\\\n\" http://localhost:8000/vi/)",
+      "Bash(/usr/bin/curl -s -o /dev/null -w \"de/  → %{http_code}\\\\n\" http://localhost:8000/de/)",
+      "Bash(/usr/bin/grep -c \"msHeroPullBack\")",
+      "Bash(/usr/bin/curl -s -o /dev/null -w '%{http_code}  __TRACKED_VAR__\\\\n' http://localhost:8000__TRACKED_VAR__)",
+      "Bash(/usr/bin/curl -s http://localhost:8000/about/)",
+      "Bash(/usr/bin/grep -oE 'ms-nav-link is-active[^>]*>[^<]+')",
+      "Bash(/usr/bin/curl -s http://localhost:8000/menu/)",
+      "Bash(/usr/bin/curl -s http://localhost:8000/news/)",
+      "Bash(/usr/bin/curl -s http://localhost:8000/career/)",
+      "Bash(/usr/bin/grep -oE 'href=\"/\\(about|menu|news|career\\)/\"[^>]*>[A-Za-z]+')",
+      "Bash(/usr/bin/curl -s http://localhost:8000/vi/)",
+      "Bash(/usr/bin/grep -oE 'href=\"/\\(about|menu|news|career\\)/\"[^>]*>[^<]+')",
+      "Bash(/usr/bin/curl -s http://localhost:8000/de/)"
     ]
   }
 }
