@@ -69,7 +69,9 @@
       "Bash(/usr/bin/grep -oE 'href=\"/\\(about|menu|news|career\\)/\"[^>]*>[A-Za-z]+')",
       "Bash(/usr/bin/curl -s http://localhost:8000/vi/)",
       "Bash(/usr/bin/grep -oE 'href=\"/\\(about|menu|news|career\\)/\"[^>]*>[^<]+')",
-      "Bash(/usr/bin/curl -s http://localhost:8000/de/)"
+      "Bash(/usr/bin/curl -s http://localhost:8000/de/)",
+      "Bash(python3 -m http.server 8000)",
+      "Bash(echo \"PID=$!\" sleep 1 curl -sI http://localhost:8000/about/)"
     ]
   }
 }
