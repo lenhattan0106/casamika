@@ -78,7 +78,7 @@ ws2.append([])
 ws2.append(["Hạng mục", "Chi phí tháng (Dự kiến)", "Tỷ lệ %/Doanh thu", "Ghi chú"])
 
 c2_data = [
-    ["Tiền thuê mặt bằng", 50000000, "5.0%", "Khu vực An Thượng"],
+    ["Tiền thuê mặt bằng", 50000000, "5.0%", "Khu vực Mỹ Khê"],
     ["Lương nhân sự (Full team)", 150000000, "15.0%", "Bếp, Phục vụ, Sale, BA"],
     ["Điện, Nước, Internet, Gas", 40000000, "4.0%", "Vận hành 1000m2"],
     ["Hoa hồng Đối tác (Vận tải/Hotel)", 150000000, "15.0%", "Trung bình 10-20%"],

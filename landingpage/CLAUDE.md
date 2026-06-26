@@ -93,11 +93,11 @@ DE:  Über uns   Speisekarte   News   Karriere   [Reservieren]      →   (same 
 
 ### Quy tắc dịch (đã chốt với user)
 - **Tagline** dịch sang cả 3 ngôn ngữ:
-  - EN: "Where An Thượng Lives Slowly"
-  - VI: "Nơi An Thượng sống thật chậm"
-  - DE: "Wo An Thượng langsam lebt"
+  - EN: "Where My Khe Lives Slowly"
+  - VI: "Nơi Mỹ Khê sống thật chậm"
+  - DE: "Wo My Khe langsam lebt"
 - **Tên món signature giữ tiếng Anh** trên cả 3 phiên bản: *Asian Seafood Platter*, *Fuji Beef on Stone*, *An Thượng Night*.
-- **Brand "Casa Mika"**, địa danh "An Thượng", số điện thoại, giờ mở cửa: giữ nguyên format gốc.
+- **Brand "Casa Mika"**, địa danh "Mỹ Khê / My Khe Beach", số điện thoại, giờ mở cửa: giữ nguyên format gốc.
 
 ### Language switcher
 - HTML markup: `<span class="ms-lang-switch">` chứa 3 link `<a class="ms-lang" data-lang="en|vi|de">`. Link đang active có thêm `is-active` + `aria-current="page"`.
@@ -128,7 +128,7 @@ Phải sửa **3 file** (`index.html`, `vi/index.html`, `de/index.html`). Đây 
 
 ## index.html (trang chính, EN)
 
-**Tagline:** *"Where An Thượng Lives Slowly"*
+**Tagline:** *"Where My Khe Lives Slowly"*
 
 ### Sections (theo thứ tự cuộn)
 1. **Nav** (`#msNav`) — fixed, blur background khi cuộn (>30px). Mobile = hamburger drawer.
@@ -204,11 +204,11 @@ Email:     info@casamika.com  → mailto:
 Facebook:  https://www.facebook.com/official.casamika
 Instagram: https://www.instagram.com/casamika.official/
 Maps:      https://maps.app.goo.gl/qsTUVr82UATkvFJv5
-Address:   37 Trần Bạch Đằng, An Thượng, Ngũ Hành Sơn, Da Nang
+Address:   37 Trần Bạch Đằng, Ngũ Hành Sơn, Da Nang (My Khe Beach area, Phước Mỹ ward)
 Hours:     Daily, 06:00 – 23:30
 ```
 
-Google Maps embed trong `index.html` dùng URL `https://maps.google.com/maps?q=37%20Tr%E1%BA%A7n%20B%E1%BA%A1ch%20%C4%90%E1%BA%B1ng%2C%20An%20Th%C6%B0%E1%BB%A3ng%2C%20Da%20Nang&output=embed` (search-by-address embed) vì share link rút gọn `maps.app.goo.gl/...` không thể nhúng iframe trực tiếp.
+Google Maps embed trong `index.html` dùng URL `https://maps.google.com/maps?q=37%20Tr%E1%BA%A7n%20B%E1%BA%A1ch%20%C4%90%E1%BA%B1ng%2C%20Ng%C5%A9%20H%C3%A0nh%20S%C6%A1n%2C%20Da%20Nang&output=embed` (search-by-address embed) vì share link rút gọn `maps.app.goo.gl/...` không thể nhúng iframe trực tiếp.
 
 ---
 
