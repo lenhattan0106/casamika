@@ -2760,11 +2760,66 @@ a {
 }
 .ms-insta-tile {
   display: block;
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  background: #0F0B08;
   transition: transform 0.5s ease, opacity 0.4s ease;
   -webkit-tap-highlight-color: transparent;
 }
+/* Premium dark overlay on hover */
+.ms-insta-tile::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 20, 16, 0.45);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+/* Centered Instagram Icon on hover */
+.ms-insta-tile::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  width: 28px;
+  height: 28px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23FAF7F2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 3;
+  pointer-events: none;
+}
+.ms-insta-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.92) brightness(0.95);
+  transition: transform 1.2s cubic-bezier(.2,.7,.2,1), filter 0.6s ease;
+}
 .ms-insta-tile:hover,
 .ms-insta-tile:focus-visible { transform: translateY(-3px); }
+.ms-insta-tile:hover::after,
+.ms-insta-tile:focus-visible::after {
+  opacity: 1;
+}
+.ms-insta-tile:hover::before,
+.ms-insta-tile:focus-visible::before {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+.ms-insta-tile:hover img,
+.ms-insta-tile:focus-visible img {
+  filter: saturate(1) brightness(1);
+  transform: scale(1.04);
+}
 .ms-insta-cta { margin-top: 3rem; }
 @media (min-width: 768px) { .ms-insta-cta { margin-top: 4rem; } }
 
@@ -2787,14 +2842,23 @@ a {
 }
 .ms-reserve-grid {
   display: grid;
+  grid-template-columns: 1fr;
   gap: 3rem;
   align-items: start;
 }
 @media (min-width: 1024px) {
   .ms-reserve-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 4.5rem;
+    align-items: center;
   }
+}
+.ms-reserve-info {
+  display: flex;
+  flex-direction: column;
+}
+.ms-reserve-info .ms-reserve-actions {
+  margin-top: 2.25rem;
 }
 .ms-reserve-meta {
   margin: 2.5rem 0 0;
@@ -2899,16 +2963,16 @@ a {
 }
 
 .ms-map-wrap {
-  margin-top: 3.5rem;
-  aspect-ratio: 16 / 9;
-  max-height: 480px;
+  aspect-ratio: 1 / 1;
   border: 1px solid rgba(184, 145, 42, 0.22);
   overflow: hidden;
+  width: 100%;
+  max-width: 500px;
+  justify-self: center;
 }
-@media (max-width: 639px) {
+@media (min-width: 1024px) {
   .ms-map-wrap {
-    aspect-ratio: 4 / 3;
-    margin-top: 2.5rem;
+    max-width: none;
   }
 }
 .ms-map-wrap iframe {
