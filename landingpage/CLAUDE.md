@@ -2,16 +2,16 @@
 
 Site có **8 trang HTML** chạy chung style.css + script.js:
 
-| URL | File | Audience | Ngôn ngữ | Trạng thái |
-|---|---|---|---|---|
-| `/` | `index.html` | Khách lẻ EN (default) | English | ✅ Production-ready |
-| `/vi/` | `vi/index.html` | Khách lẻ VN | Tiếng Việt | ✅ Production-ready |
-| `/de/` | `de/index.html` | Khách lẻ DE | Deutsch | ✅ Production-ready |
-| `/about/` | `about/index.html` | Brand story | English | 🚧 Stub (Coming soon) |
-| `/menu/` | `menu/index.html` | Menu page | English | 🚧 Stub (Coming soon) |
-| `/news/` | `news/index.html` | Press / blog | English | 🚧 Stub (Coming soon) |
-| `/career/` | `career/index.html` | Tuyển dụng | English | 🚧 Stub (Coming soon) |
-| `/doi-tac.html` | `doi-tac.html` | Đối tác B2B | Tiếng Việt | ✅ Production-ready |
+| URL             | File                | Audience              | Ngôn ngữ   | Trạng thái            |
+| --------------- | ------------------- | --------------------- | ---------- | --------------------- |
+| `/`             | `index.html`        | Khách lẻ EN (default) | English    | ✅ Production-ready   |
+| `/vi/`          | `vi/index.html`     | Khách lẻ VN           | Tiếng Việt | ✅ Production-ready   |
+| `/de/`          | `de/index.html`     | Khách lẻ DE           | Deutsch    | ✅ Production-ready   |
+| `/about/`       | `about/index.html`  | Brand story           | English    | 🚧 Stub (Coming soon) |
+| `/menu/`        | `menu/index.html`   | Menu page             | English    | 🚧 Stub (Coming soon) |
+| `/news/`        | `news/index.html`   | Press / blog          | English    | 🚧 Stub (Coming soon) |
+| `/career/`      | `career/index.html` | Tuyển dụng            | English    | 🚧 Stub (Coming soon) |
+| `/doi-tac.html` | `doi-tac.html`      | Đối tác B2B           | Tiếng Việt | ✅ Production-ready   |
 
 Stack: HTML/CSS/JS thuần, **không build step**. Deploy Vercel (push main branch → auto).
 
@@ -76,35 +76,38 @@ DE:  Über uns   Speisekarte   News   Karriere   [Reservieren]      →   (same 
 
 ## Roadmap
 
-| Phase | Việc | Status |
-|---|---|---|
-| 0 | Plan + decisions | ✅ Done |
-| **1** | **Nav restructure (About/Menu/News/Career) + 4 EN stub pages** | **✅ Done** |
-| 2 | Build About page (brand story, team, atmosphere details, garden tour) | ⏳ Next |
-| 3 | Build Menu page (signature dishes, menu sections, wine, dietary, PDF) | ⏳ |
-| 4 | Build News page index + first articles (mỗi article 1 sub-page riêng) | ⏳ |
-| 5 | Build Career page (culture, generic "Send CV" — chưa có vacancies) | ⏳ |
-| 6 | Dịch VI + DE cho 4 trang mới, update nav href sang `/vi/about/`, `/de/about/` etc. | ⏳ |
-| 7 | SEO polish: sitemap.xml, hreflang inter-page, robots.txt | ⏳ |
+| Phase | Việc                                                                               | Status      |
+| ----- | ---------------------------------------------------------------------------------- | ----------- |
+| 0     | Plan + decisions                                                                   | ✅ Done     |
+| **1** | **Nav restructure (About/Menu/News/Career) + 4 EN stub pages**                     | **✅ Done** |
+| 2     | Build About page (brand story, team, atmosphere details, garden tour)              | ⏳ Next     |
+| 3     | Build Menu page (signature dishes, menu sections, wine, dietary, PDF)              | ⏳          |
+| 4     | Build News page index + first articles (mỗi article 1 sub-page riêng)              | ⏳          |
+| 5     | Build Career page (culture, generic "Send CV" — chưa có vacancies)                 | ⏳          |
+| 6     | Dịch VI + DE cho 4 trang mới, update nav href sang `/vi/about/`, `/de/about/` etc. | ⏳          |
+| 7     | SEO polish: sitemap.xml, hreflang inter-page, robots.txt                           | ⏳          |
 
 ---
 
 ## i18n (3 ngôn ngữ: EN / VI / DE)
 
 ### Quy tắc dịch (đã chốt với user)
+
 - **Tagline** dịch sang cả 3 ngôn ngữ:
   - EN: "Where My Khe Lives Slowly"
   - VI: "Nơi Mỹ Khê sống thật chậm"
   - DE: "Wo My Khe langsam lebt"
-- **Tên món signature giữ tiếng Anh** trên cả 3 phiên bản: *Asian Seafood Platter*, *Fuji Beef on Stone*, *An Thượng Night*.
+- **Tên món signature giữ tiếng Anh** trên cả 3 phiên bản: _Asian Seafood Platter_, _Fuji Beef on Stone_, _An Thượng Night_.
 - **Brand "Casa Mika"**, địa danh "Mỹ Khê / My Khe Beach", số điện thoại, giờ mở cửa: giữ nguyên format gốc.
 
 ### Language switcher
+
 - HTML markup: `<span class="ms-lang-switch">` chứa 3 link `<a class="ms-lang" data-lang="en|vi|de">`. Link đang active có thêm `is-active` + `aria-current="page"`.
 - CSS: `.ms-lang-switch`, `.ms-lang`, `.ms-lang-sep` ở `style.css` (gần block `.ms-nav-link`). Trên mobile drawer tự stack qua media query.
 - JS persist: `script.js` có listener trên mọi `[data-lang]` — click sẽ `localStorage.setItem('mika-lang', this.dataset.lang)`.
 
 ### Auto-redirect (chỉ trên `/`)
+
 - Inline script ở đầu `<head>` trong `index.html` (root EN), **không có trong `vi/` và `de/`**:
   - Nếu path không phải `/` hoặc `/index.html` → bỏ qua (chạy phòng hờ cache CDN).
   - Đọc `localStorage.mika-lang` → nếu có dùng nó; nếu không dùng `navigator.language.slice(0,2)`.
@@ -112,25 +115,29 @@ DE:  Über uns   Speisekarte   News   Karriere   [Reservieren]      →   (same 
 - User chọn thủ công qua switcher sẽ ghi localStorage → quyết định stick lâu dài.
 
 ### SEO hreflang
+
 Cả 3 trang B2C đều có:
+
 ```html
-<link rel="canonical" href="https://casamika.com/{lang}/">
-<link rel="alternate" hreflang="en" href="https://casamika.com/">
-<link rel="alternate" hreflang="vi" href="https://casamika.com/vi/">
-<link rel="alternate" hreflang="de" href="https://casamika.com/de/">
-<link rel="alternate" hreflang="x-default" href="https://casamika.com/">
+<link rel="canonical" href="https://casamika.com/{lang}/" />
+<link rel="alternate" hreflang="en" href="https://casamika.com/" />
+<link rel="alternate" hreflang="vi" href="https://casamika.com/vi/" />
+<link rel="alternate" hreflang="de" href="https://casamika.com/de/" />
+<link rel="alternate" hreflang="x-default" href="https://casamika.com/" />
 ```
 
 ### Khi đổi nội dung
+
 Phải sửa **3 file** (`index.html`, `vi/index.html`, `de/index.html`). Đây là trade-off của Cách A (multi-file). Nếu sau này nội dung đổi liên tục, cân nhắc lên SSG (Astro/11ty).
 
 ---
 
 ## index.html (trang chính, EN)
 
-**Tagline:** *"Where My Khe Lives Slowly"*
+**Tagline:** _"Where My Khe Lives Slowly"_
 
 ### Sections (theo thứ tự cuộn)
+
 1. **Nav** (`#msNav`) — fixed, blur background khi cuộn (>30px). Mobile = hamburger drawer.
 2. **Hero** (`#hero`) — fullscreen `100svh`, `image3d.jpg` background + Ken Burns zoom 22s, eyebrow address, H1 italic gold "Lives Slowly", 2 CTA: **Reserve a Table** / **Discover the Space**.
 3. **The House** (`#house`) — Editorial 2-col: ảnh `image/hinh1.jpg` + text + 3 stat metas (1,400m² · 06:00–23:30 · Asian·Western).
@@ -141,6 +148,7 @@ Phải sửa **3 file** (`index.html`, `vi/index.html`, `de/index.html`). Đây 
 8. **Footer** — Logo + Visit + Contact + Follow (FB/IG SVG icons). Bottom có dòng nhỏ link sang `doi-tac.html` cho partner.
 
 ### UI patterns đặc biệt
+
 - **Sticky Reserve CTA** (`#msStickyCta`) — fab góc phải dưới, hiện khi cuộn qua ~85% hero, **ẩn khi đang ở Reserve section** (tránh dư thừa).
 - **Mobile hamburger nav** (`#msNavToggle`) — toggle drawer fullscreen, đóng khi click link / Esc.
 - **Lightbox** (`#msLightbox`) — swipe ngang prev/next, swipe xuống đóng, click ngoài đóng.
@@ -151,7 +159,7 @@ Phải sửa **3 file** (`index.html`, `vi/index.html`, `de/index.html`). Đây 
 
 - Có **`.back-to-main`** bar trên cùng: "← Trở về trang chính Casa Mika" → `index.html`.
 - Logo trong navbar giờ link về `index.html` (trước là `#`).
-- Link Zalo placeholder cũ `https://zalo.me/` đã thay thành `https://zalo.me/0706024684`.
+- Link Zalo placeholder cũ `https://zalo.me/` đã thay thành `https://zalo.me/0708888007`.
 - Footer thêm dòng hotline + Zalo.
 - Còn lại nguyên bản: Hero (image3d.jpg), Giá Trị Cốt Lõi, Chính Sách, Ẩm Thực, Bảng Giá (Standard/Premium/VIP), CTA, Modal menu Unsplash.
 
@@ -160,16 +168,19 @@ Phải sửa **3 file** (`index.html`, `vi/index.html`, `de/index.html`). Đây 
 ## Design system (1 file `style.css`)
 
 File chia 2 phần qua banner comment lớn:
+
 - **Phần trên** (~lines 1–1699): tất cả CSS cho `doi-tac.html` (giữ nguyên không sửa).
 - **Phần dưới** (sau banner `MAIN SITE — index.html`): CSS cho trang chính, prefix `.ms-*` + scope `.site-main`.
 
 **Token chung (dùng cho cả 2):**
+
 - Gold `#B8912A` · Gold light `#D4A94A` · Dark `#1A1410` · Cream `#FAF7F2`
 - Heading: `'Playfair Display'`, italic em = gold
 - Body: `'Inter'`
 - Animation classes: `.fade-up`, `.fade-in`, `.delay-1`, `.delay-2`, `.delay-3`
 
 ### Mobile-first / iPhone optimization (CHỈ trang chính)
+
 - **`100svh`** cho hero — fix iOS Safari address-bar height issue
 - **`env(safe-area-inset-top/bottom)`** — nav, sticky CTA, footer bottom, lightbox close button (notch + home indicator)
 - **`-webkit-tap-highlight-color: transparent`** — bỏ flash xám khi tap iOS
@@ -199,7 +210,7 @@ Tất cả init bằng `DOMContentLoaded`. Mỗi block đều **null-check eleme
 
 ```
 Hotline:   0708 888 007       → tel:+84708888007
-Zalo:      0706 024 684       → https://zalo.me/0706024684
+Zalo:      0708 888 007       → https://zalo.me/0708888007
 Email:     info@casamika.com  → mailto:
 Facebook:  https://www.facebook.com/official.casamika
 Instagram: https://www.instagram.com/casamika.official/
