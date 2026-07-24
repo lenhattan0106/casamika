@@ -124,6 +124,22 @@ document.addEventListener('DOMContentLoaded', () => {
         onMsScroll();
     }
 
+    // Menu QR / direct menu route: land visitors on the actual menu, below the hero.
+    const msMenuPdfSection = document.getElementById('menu-pdf');
+    const msPath = window.location.pathname.replace(/\/index\.html$/, '').replace(/\/$/, '') || '/';
+    if (msMenuPdfSection && msPath === '/menu' && (!window.location.hash || window.location.hash === '#menu-pdf')) {
+        window.setTimeout(() => {
+            const headerOffset = 80;
+            const elementPosition = msMenuPdfSection.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+            window.scrollTo({
+                top: Math.max(0, offsetPosition),
+                behavior: 'smooth'
+            });
+        }, 120);
+    }
+
     // Mobile nav toggle (hamburger drawer)
     const msNavToggle = document.getElementById('msNavToggle');
     if (msNavToggle && msNav) {
@@ -220,4 +236,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
-

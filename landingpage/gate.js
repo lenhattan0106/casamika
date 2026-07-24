@@ -19,9 +19,10 @@
 
         var path = location.pathname.replace(/\/index\.html$/, '').replace(/\/$/, '') || '/';
         var onCountdown = path === '/soft-opening';
+        var publicDuringSoftOpening = path === '/menu';
 
         if (Date.now() < openAt) {
-            if (!onCountdown) location.replace('/soft-opening/');
+            if (!onCountdown && !publicDuringSoftOpening) location.replace('/soft-opening/');
         } else if (onCountdown) {
             location.replace('/');
         }
