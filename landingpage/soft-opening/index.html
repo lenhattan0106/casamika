@@ -40,33 +40,15 @@
 
         <p class="ms-countdown-eyebrow">My Khe Beach · Da Nang</p>
 
-        <h1 class="ms-countdown-title">Soft Opening<br><em>is almost here.</em></h1>
+        <h1 class="ms-countdown-title">Soft Opening</h1>
 
-        <p class="ms-countdown-lede">Chúng tôi đang chuẩn bị thật chu đáo để mở cửa.</p>
+        <p class="ms-countdown-lede">Chúng tôi đang hoàn thiện khu vườn, gian bếp và những chi tiết cuối cùng để đón bạn thật chu đáo.</p>
 
-        <div class="ms-countdown-grid" role="timer" aria-live="polite" aria-label="Countdown to soft opening">
-            <div class="ms-countdown-unit">
-                <span class="ms-countdown-num" id="cd-days">00</span>
-                <span class="ms-countdown-label">Days</span>
-            </div>
-            <span class="ms-countdown-sep" aria-hidden="true">:</span>
-            <div class="ms-countdown-unit">
-                <span class="ms-countdown-num" id="cd-hours">00</span>
-                <span class="ms-countdown-label">Hours</span>
-            </div>
-            <span class="ms-countdown-sep" aria-hidden="true">:</span>
-            <div class="ms-countdown-unit">
-                <span class="ms-countdown-num" id="cd-mins">00</span>
-                <span class="ms-countdown-label">Minutes</span>
-            </div>
-            <span class="ms-countdown-sep" aria-hidden="true">:</span>
-            <div class="ms-countdown-unit">
-                <span class="ms-countdown-num" id="cd-secs">00</span>
-                <span class="ms-countdown-label">Seconds</span>
-            </div>
+        <div class="ms-coming-soon-mark" aria-label="Soft opening coming soon">
+            <span class="ms-coming-soon-label">Coming soon</span>
+            <span class="ms-coming-soon-line" aria-hidden="true"></span>
+            <span class="ms-coming-soon-note">Casa Mika is being prepared with care</span>
         </div>
-
-        <p class="ms-countdown-date" id="cd-date">28 July 2026 · 6:30 · Da Nang (UTC+7)</p>
 
         <div class="ms-countdown-actions">
             <a href="https://zalo.me/0706024684" target="_blank" rel="noopener"
@@ -76,38 +58,6 @@
 
         <p class="ms-countdown-address">37 Trần Bạch Đằng, Ngũ Hành Sơn, Da Nang</p>
     </main>
-
-    <script>
-    (function () {
-        var OPEN = '2026-07-28T06:30:00+07:00';
-        var openAt = new Date(OPEN).getTime();
-        var daysEl = document.getElementById('cd-days');
-        var hoursEl = document.getElementById('cd-hours');
-        var minsEl = document.getElementById('cd-mins');
-        var secsEl = document.getElementById('cd-secs');
-
-        function pad(n) { return n < 10 ? '0' + n : String(n); }
-
-        function tick() {
-            var left = openAt - Date.now();
-            if (left <= 0) {
-                location.replace('/');
-                return;
-            }
-            var s = Math.floor(left / 1000);
-            var d = Math.floor(s / 86400); s -= d * 86400;
-            var h = Math.floor(s / 3600); s -= h * 3600;
-            var m = Math.floor(s / 60); s -= m * 60;
-            daysEl.textContent = pad(d);
-            hoursEl.textContent = pad(h);
-            minsEl.textContent = pad(m);
-            secsEl.textContent = pad(s);
-        }
-
-        tick();
-        setInterval(tick, 1000);
-    })();
-    </script>
 </body>
 
 </html>
