@@ -5,7 +5,7 @@
  */
 (function () {
     try {
-        var OPEN = '2026-07-28T06:30:00+07:00';
+        var OPEN = '2026-08-08T08:00:00+07:00';
         var openAt = new Date(OPEN).getTime();
         if (isNaN(openAt)) return;
 
